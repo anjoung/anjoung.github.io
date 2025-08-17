@@ -1,4 +1,7 @@
 name: Andrew Joung, Research Coordinator
+title: "Andrew Joung"
+description: "PhD candidate in Economics researching labor market shocks and intergenerational effects"
+url: "https://anjoung.github.io"
 markdown: kramdown
 
 plugins:
