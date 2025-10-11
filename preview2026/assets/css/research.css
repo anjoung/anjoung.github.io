@@ -47,7 +47,7 @@
 .paper-title {
     color: var(--color-text);
     font-size: 1.1rem;  /* Reduced from 1.25rem */
-    margin-bottom: 0.25rem;  /* Much less margin */
+    margin-bottom: 0rem;  /* Much less margin */
     line-height: 1.2;  /* Tighter line height */
     font-weight: 500;
 }
@@ -145,7 +145,7 @@
 
 /* Collapsible Abstract */
 .paper-abstract-collapsible {
-    margin: 0.5rem 0;  /* Less margin */
+    margin: 0;  /* Less margin */
     padding: 0.75rem;  /* Less padding */
     background: var(--color-bg-light);
     border-radius: 4px;
