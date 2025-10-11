@@ -190,6 +190,8 @@
     margin-bottom: 0rem;  /* Much reduced spacing between items */
     background: var(--color-bg);
     border-radius: 4px;
+   transition: none;  /* No hover effects */
+
 }
 
 .research-item .paper-title {
