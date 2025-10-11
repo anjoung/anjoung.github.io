@@ -12,7 +12,7 @@
     background: var(--color-bg);
     border-radius: 8px;
     padding: var(--spacing-lg);
-    margin-bottom: var(--spacing-lg);
+    margin-bottom: var(--spacing-xs);
     transition: none;  /* No hover effects */
 }
 
@@ -20,7 +20,7 @@
     background: var(--color-bg);
     border-radius: 8px;
     padding: var(--spacing-md);  /* Less padding */
-    margin-bottom: var(--spacing-md);  /* Less margin */
+    margin-bottom: var(--spacing-xs);  /* Less margin */
     transition: none;  /* No hover effects */
 }
 
@@ -194,10 +194,9 @@
 /* Work in Progress Items - More Compact */
 .research-item {
     padding: var(--spacing-sm);
-    border-left: 3px solid var(--color-primary);
-    margin-bottom: var(--spacing-md);  /* Reduced spacing */
+    margin-bottom: var(--spacing-xs);  /* Reduced spacing */
     background: var(--color-bg);
-    border-radius: 0 4px 4px 0;
+    border-radius: 4px;
 }
 
 .research-item .paper-title {
