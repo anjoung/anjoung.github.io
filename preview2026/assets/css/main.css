@@ -2,22 +2,19 @@
    CSS Variables & Root Settings
    ======================================== */
 :root {
-    /* Color Palette */
-    --color-primary: #00274C;      /* Michigan Blue */
-    --color-primary-dark: #001830;
-    --color-accent: #FFCB05;       /* Michigan Maize */
-    --color-text: #2C3E50;
-    --color-text-light: #5A6C7D;
-    --color-bg: #FFFFFF;
-    --color-bg-alt: #F8F9FA;
-    --color-border: #E1E8ED;
-    --color-success: #27AE60;
-    --color-warning: #F39C12;
-    --color-error: #E74C3C;
+    /* Color Palette - Google Style */
+    --color-text: #333333;
+    --color-text-secondary: #5f6368;
+    --color-primary: #1a73e8;  /* Google Blue */
+    --color-primary-dark: #1557b0;
+    --color-accent: #e8f0fe;   /* Light blue background */
+    --color-link: #1a73e8;
+    --color-bg: #ffffff;
+    --color-bg-light: #f8f9fa;  /* Light gray background */
+    --color-border: #dadce0;
     
     /* Typography */
-    --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
-    --font-serif: 'Crimson Text', Georgia, serif;
+    --font-sans: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', Oxygen, Ubuntu, sans-serif;
     
     /* Spacing */
     --spacing-xs: 0.5rem;
@@ -28,7 +25,7 @@
     --spacing-xxl: 4rem;
     
     /* Layout */
-    --max-width: 1200px;
+    --max-width: 1100px;
     --content-width: 800px;
     
     /* Transitions */
@@ -36,21 +33,9 @@
     --transition-fast: all 0.15s ease;
     
     /* Shadows */
-    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
-    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
-    --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.1);
-}
-
-/* Dark Mode Variables */
-[data-theme="dark"] {
-    --color-primary: #4A90E2;
-    --color-primary-dark: #357ABD;
-    --color-accent: #FFD700;
-    --color-text: #E1E8ED;
-    --color-text-light: #A0AEC0;
-    --color-bg: #1A202C;
-    --color-bg-alt: #2D3748;
-    --color-border: #4A5568;
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 2px 4px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
 /* ========================================
@@ -71,27 +56,27 @@ html {
 body {
     font-family: var(--font-sans);
     color: var(--color-text);
-    background-color: var(--color-bg);
+    background-color: var(--color-bg-light);  /* Light background for body */
     line-height: 1.6;
     font-weight: 400;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    transition: var(--transition);
 }
 
 /* ========================================
    Typography
    ======================================== */
 h1, h2, h3, h4, h5, h6 {
-    font-weight: 600;
+    font-weight: 500;
     line-height: 1.2;
     margin-bottom: var(--spacing-sm);
-    color: var(--color-primary);
+    color: var(--color-text);
+    letter-spacing: -0.01em;
 }
 
-h1 { font-size: 2.5rem; }
-h2 { font-size: 2rem; }
+h1 { font-size: 2.5rem; font-weight: 300; }
+h2 { font-size: 2rem; font-weight: 400; }
 h3 { font-size: 1.5rem; }
 h4 { font-size: 1.25rem; }
 h5 { font-size: 1.1rem; }
@@ -99,40 +84,35 @@ h6 { font-size: 1rem; }
 
 p {
     margin-bottom: var(--spacing-sm);
-    line-height: 1.8;
+    line-height: 1.7;
 }
 
 a {
-    color: var(--color-primary);
+    color: var(--color-link);
     text-decoration: none;
     transition: var(--transition-fast);
 }
 
 a:hover {
-    color: var(--color-primary-dark);
+    text-decoration: underline;
 }
 
 /* ========================================
-   Navigation
+   Navigation - No Dark Mode Toggle
    ======================================== */
 .main-nav {
-    background: var(--color-bg);
-    border-bottom: 1px solid var(--color-border);
+    background: var(--color-bg);  /* White background */
+    box-shadow: var(--shadow-sm);
     position: sticky;
     top: 0;
     z-index: 1000;
-    backdrop-filter: blur(10px);
-    background: rgba(255, 255, 255, 0.95);
-}
-
-[data-theme="dark"] .main-nav {
-    background: rgba(26, 32, 44, 0.95);
 }
 
 .nav-container {
     max-width: var(--max-width);
     margin: 0 auto;
-    padding: var(--spacing-sm) var(--spacing-md);
+    padding: 0 var(--spacing-md);
+    height: 64px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -140,29 +120,45 @@ a:hover {
 
 .nav-brand a {
     font-size: 1.25rem;
-    font-weight: 700;
-    color: var(--color-primary);
-    letter-spacing: -0.5px;
+    font-weight: 500;
+    color: var(--color-text);
+    letter-spacing: -0.01em;
+    text-decoration: none;
+}
+
+.nav-brand a:hover {
+    text-decoration: none;
 }
 
 .nav-menu {
     display: flex;
     align-items: center;
-    gap: var(--spacing-lg);
+    gap: 0;
 }
 
 .nav-menu a {
-    font-weight: 500;
-    color: var(--color-text);
-    padding: var(--spacing-xs) var(--spacing-sm);
-    border-radius: 4px;
+    color: var(--color-text-secondary);
+    text-decoration: none;
+    padding: 0 var(--spacing-md);
+    height: 64px;
+    display: flex;
+    align-items: center;
+    border-bottom: 3px solid transparent;
     transition: var(--transition-fast);
+    font-weight: 500;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
-.nav-menu a:hover,
+.nav-menu a:hover {
+    background: var(--color-bg-light);
+    text-decoration: none;
+}
+
 .nav-menu a.active {
-    background: var(--color-bg-alt);
     color: var(--color-primary);
+    border-bottom-color: var(--color-primary);
 }
 
 .nav-toggle {
@@ -182,33 +178,11 @@ a:hover {
     transition: var(--transition-fast);
 }
 
-/* Theme Toggle Button */
-.theme-toggle {
-    background: var(--color-bg-alt);
-    border: 1px solid var(--color-border);
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: var(--transition-fast);
-    color: var(--color-text);
-}
-
-.theme-toggle:hover {
-    background: var(--color-border);
-}
-
-.theme-toggle .moon-icon { display: none; }
-[data-theme="dark"] .theme-toggle .sun-icon { display: none; }
-[data-theme="dark"] .theme-toggle .moon-icon { display: block; }
-
 /* ========================================
-   Simple Hero Section (Like Michael Stepner)
+   Simple Hero Section (Photo on Left)
    ======================================== */
 .hero-simple {
+    background: var(--color-bg-light);
     padding: var(--spacing-xxl) 0;
     flex: 1;
 }
@@ -221,27 +195,30 @@ a:hover {
 
 .hero-grid {
     display: grid;
-    grid-template-columns: 1fr auto;
-    gap: var(--spacing-xxl);
+    grid-template-columns: 220px 1fr;  /* Photo on left */
+    gap: var(--spacing-xl);
     align-items: start;
     max-width: 900px;
 }
 
 .hero-name {
     font-size: 2.5rem;
+    font-weight: 300;
     margin-bottom: var(--spacing-xs);
-    color: var(--color-primary);
+    color: var(--color-text);
 }
 
 .hero-title {
-    font-size: 1.3rem;
-    color: var(--color-text);
+    font-size: 1.25rem;
+    color: var(--color-primary);
     margin-bottom: var(--spacing-xs);
+    font-weight: 400;
 }
 
 .hero-affiliation {
-    color: var(--color-text-light);
+    color: var(--color-text-secondary);
     margin-bottom: var(--spacing-lg);
+    font-size: 1rem;
 }
 
 .hero-bio {
@@ -250,32 +227,34 @@ a:hover {
 
 .hero-bio p {
     margin-bottom: var(--spacing-md);
+    color: var(--color-text);
 }
 
+/* Email outside the bubble */
+.hero-contact {
+    margin: var(--spacing-md) 0;
+    color: var(--color-text-secondary);
+}
+
+/* Job Market Notice - Google Style Alert */
 .job-market-notice {
-    background: var(--color-accent);
-    color: var(--color-primary);
-    padding: var(--spacing-sm) var(--spacing-md);
+    background: var(--color-accent);  /* Light blue background */
     border-radius: 8px;
+    padding: var(--spacing-sm) var(--spacing-md);
     margin: var(--spacing-md) 0;
     font-size: 1rem;
+    color: #1967d2;  /* Darker blue text */
+    font-weight: 500;
 }
 
-[data-theme="dark"] .job-market-notice {
-    background: rgba(255, 215, 0, 0.2);
-    color: var(--color-accent);
-}
-
-.hero-contact {
-    margin-top: var(--spacing-md);
-}
-
+/* Photo on Left */
 .hero-photo {
-    width: 250px;
-    height: 250px;
-    border-radius: 12px;
+    width: 220px;
+    height: 220px;
+    border-radius: 8px;
     overflow: hidden;
     box-shadow: var(--shadow-md);
+    background: white;
 }
 
 .hero-photo img {
@@ -289,14 +268,16 @@ a:hover {
    ======================================== */
 .btn {
     display: inline-block;
-    padding: 0.75rem 1.5rem;
+    padding: 0.625rem 1.25rem;
     font-weight: 500;
     text-align: center;
-    border-radius: 8px;
+    border-radius: 4px;
     transition: var(--transition-fast);
     cursor: pointer;
-    border: 2px solid transparent;
-    font-size: 1rem;
+    border: none;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
 .btn-primary {
@@ -306,37 +287,26 @@ a:hover {
 
 .btn-primary:hover {
     background: var(--color-primary-dark);
-    transform: translateY(-2px);
+    text-decoration: none;
     box-shadow: var(--shadow-md);
 }
 
 .btn-secondary {
-    background: var(--color-bg-alt);
+    background: var(--color-bg);
     color: var(--color-primary);
-    border-color: var(--color-border);
+    border: 1px solid var(--color-border);
 }
 
 .btn-secondary:hover {
-    background: var(--color-border);
-    transform: translateY(-2px);
-}
-
-.btn-outline {
-    background: transparent;
-    color: var(--color-primary);
-    border-color: var(--color-primary);
-}
-
-.btn-outline:hover {
-    background: var(--color-primary);
-    color: white;
+    background: var(--color-bg-light);
+    text-decoration: none;
 }
 
 /* ========================================
    Minimal Footer (50% smaller)
    ======================================== */
 .main-footer-minimal {
-    background: var(--color-bg-alt);
+    background: var(--color-bg);
     border-top: 1px solid var(--color-border);
     padding: var(--spacing-md) 0;
     margin-top: auto;
@@ -351,9 +321,9 @@ a:hover {
 }
 
 .footer-content-minimal p {
-    color: var(--color-text-light);
+    color: var(--color-text-secondary);
     margin: 0;
-    font-size: 0.9rem;
+    font-size: 0.875rem;
 }
 
 .footer-links-minimal {
@@ -362,43 +332,32 @@ a:hover {
 }
 
 .footer-links-minimal a {
-    color: var(--color-text-light);
-    font-weight: 500;
-    font-size: 0.9rem;
+    color: var(--color-primary);
+    font-size: 0.875rem;
 }
 
 .footer-links-minimal a:hover {
-    color: var(--color-primary);
+    text-decoration: underline;
 }
 
 /* ========================================
    Sections
    ======================================== */
 .section {
-    padding: var(--spacing-xxl) 0;
+    padding: var(--spacing-xl) 0;
+    background: var(--color-bg);
 }
 
-.section:nth-child(even) {
-    background: var(--color-bg-alt);
+.section-first {
+    padding-top: var(--spacing-xxl);
 }
 
 .section-title {
-    text-align: center;
-    margin-bottom: var(--spacing-xl);
-    position: relative;
-    padding-bottom: var(--spacing-sm);
-}
-
-.section-title::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 60px;
-    height: 3px;
-    background: var(--color-accent);
-    border-radius: 2px;
+    text-align: left;
+    margin-bottom: var(--spacing-lg);
+    font-size: 1.75rem;
+    font-weight: 400;
+    color: var(--color-text);
 }
 
 /* ========================================
@@ -418,16 +377,24 @@ a:hover {
     
     .nav-menu {
         position: fixed;
-        top: 60px;
+        top: 64px;
         left: -100%;
         width: 100%;
-        height: calc(100vh - 60px);
+        height: calc(100vh - 64px);
         background: var(--color-bg);
         flex-direction: column;
         padding: var(--spacing-lg);
-        gap: var(--spacing-md);
+        gap: 0;
         transition: var(--transition);
-        border-top: 1px solid var(--color-border);
+        box-shadow: var(--shadow-lg);
+    }
+    
+    .nav-menu a {
+        width: 100%;
+        height: auto;
+        padding: var(--spacing-sm) 0;
+        border-bottom: 1px solid var(--color-border);
+        border-left: none;
     }
     
     .nav-menu.active {
@@ -441,11 +408,9 @@ a:hover {
     }
     
     .hero-photo {
-        width: 200px;
-        height: 200px;
+        width: 180px;
+        height: 180px;
         margin: 0 auto;
-        order: -1;
-        margin-bottom: var(--spacing-lg);
     }
     
     /* Footer */
@@ -459,7 +424,7 @@ a:hover {
    Print Styles
    ======================================== */
 @media print {
-    .main-nav, .main-footer-minimal, .theme-toggle, .nav-toggle {
+    .main-nav, .main-footer-minimal, .nav-toggle {
         display: none;
     }
     
