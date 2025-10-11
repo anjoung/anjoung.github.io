@@ -11,7 +11,7 @@
 .research-paper {
     background: var(--color-bg);
     border-radius: 8px;
-    padding: var(--spacing-xs);
+    padding: var(--spacing-lg);
     margin-bottom: var(--spacing-xs);
     transition: none;  /* No hover effects */
 }
