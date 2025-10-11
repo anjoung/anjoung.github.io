@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="assets/css/research.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Crimson+Text:ital@0;1&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- Navigation -->
@@ -30,31 +30,15 @@
                 <a href="index.html">Home</a>
                 <a href="research.html" class="active">Research</a>
                 <a href="CV.pdf">CV</a>
-                <button class="theme-toggle" aria-label="Toggle dark mode">
-                    <svg class="sun-icon" width="20" height="20" fill="currentColor">
-                        <circle cx="10" cy="10" r="5"></circle>
-                        <path d="M10 0v2M10 18v2M0 10h2M18 10h2M2.93 2.93l1.41 1.41M14.66 14.66l1.41 1.41M2.93 17.07l1.41-1.41M14.66 5.34l1.41-1.41"></path>
-                    </svg>
-                    <svg class="moon-icon" width="20" height="20" fill="currentColor">
-                        <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
-                    </svg>
-                </button>
             </div>
         </div>
     </nav>
 
-    <!-- Main Content -->
-    <main id="main-content">
-        <!-- Page Header -->
-        <section class="page-header">
-            <div class="container">
-                <h1 class="page-title">Research</h1>
-                <p class="page-subtitle">My research focuses on labor economics, with particular emphasis on intergenerational effects of economic shocks and labor market dynamics.</p>
-            </div>
-        </section>
-
+    <!-- Main Content - No Page Header Banner -->
+    <main id="main-content" class="research-main">
+        
         <!-- Job Market Paper -->
-        <section class="section" id="job-market-paper">
+        <section class="section section-first" id="job-market-paper">
             <div class="container">
                 <h2 class="section-title">Job Market Paper</h2>
                 <article class="research-paper featured">
@@ -73,7 +57,37 @@
                     <div class="paper-links">
                         <a href="#" class="btn btn-primary">Download PDF</a>
                         <a href="#" class="btn btn-secondary">Online Appendix</a>
-                        <a href="#" class="btn btn-outline">Slides</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Published Papers -->
+        <section class="section" id="published-papers">
+            <div class="container">
+                <h2 class="section-title">Published Papers</h2>
+                
+                <article class="research-paper-compact">
+                    <h3 class="paper-title">
+                        "Title of Published Paper Here"
+                    </h3>
+                    <div class="paper-meta">
+                        <span class="paper-journal">Journal of Labor Economics</span>
+                        <span class="paper-date">2024</span>
+                    </div>
+                    <!-- Collapsible abstract -->
+                    <button class="abstract-toggle" aria-expanded="false">
+                        <span class="toggle-text">Show Abstract</span>
+                        <svg class="toggle-icon" width="12" height="12" viewBox="0 0 12 12">
+                            <path d="M2 4l4 4 4-4" stroke="currentColor" fill="none" stroke-width="2"/>
+                        </svg>
+                    </button>
+                    <div class="paper-abstract-collapsible" hidden>
+                        <p>Abstract text would go here.</p>
+                    </div>
+                    <div class="paper-links">
+                        <a href="#" class="paper-link">Published Version</a>
+                        <a href="#" class="paper-link">Working Paper</a>
                     </div>
                 </article>
             </div>
@@ -84,7 +98,7 @@
             <div class="container">
                 <h2 class="section-title">Working Papers</h2>
                 
-                <article class="research-paper">
+                <article class="research-paper-compact">
                     <h3 class="paper-title">
                         "The Minimum Wage and the Gig Economy: Evidence from Seattle"
                     </h3>
@@ -108,7 +122,7 @@
                     </div>
                 </article>
 
-                <article class="research-paper">
+                <article class="research-paper-compact">
                     <h3 class="paper-title">
                         "Union Decline and Rising Income Inequality: A Quantitative Assessment"
                     </h3>
@@ -143,22 +157,49 @@
                     <h3 class="paper-title">
                         "The Future of Self-Employment: Technology and Labor Market Transformation"
                     </h3>
-                    <p class="paper-description">Examining how technological change affects the decision to become self-employed and the returns to self-employment across different skill levels.</p>
+                    <!-- Collapsible description -->
+                    <button class="abstract-toggle" aria-expanded="false">
+                        <span class="toggle-text">Show Description</span>
+                        <svg class="toggle-icon" width="12" height="12" viewBox="0 0 12 12">
+                            <path d="M2 4l4 4 4-4" stroke="currentColor" fill="none" stroke-width="2"/>
+                        </svg>
+                    </button>
+                    <div class="paper-abstract-collapsible" hidden>
+                        <p>Examining how technological change affects the decision to become self-employed and the returns to self-employment across different skill levels.</p>
+                    </div>
                 </article>
 
                 <article class="research-item">
                     <h3 class="paper-title">
                         "Spatial Mobility and Intergenerational Transmission of Economic Status"
                     </h3>
-                    <p class="paper-description">with Maria Garcia</p>
-                    <p class="paper-description">Investigating how geographic mobility affects the intergenerational transmission of income and education.</p>
+                    <p class="paper-coauthors-inline">with Maria Garcia</p>
+                    <!-- Collapsible description -->
+                    <button class="abstract-toggle" aria-expanded="false">
+                        <span class="toggle-text">Show Description</span>
+                        <svg class="toggle-icon" width="12" height="12" viewBox="0 0 12 12">
+                            <path d="M2 4l4 4 4-4" stroke="currentColor" fill="none" stroke-width="2"/>
+                        </svg>
+                    </button>
+                    <div class="paper-abstract-collapsible" hidden>
+                        <p>Investigating how geographic mobility affects the intergenerational transmission of income and education.</p>
+                    </div>
                 </article>
 
                 <article class="research-item">
                     <h3 class="paper-title">
                         "Automation and the Gender Wage Gap: A Task-Based Approach"
                     </h3>
-                    <p class="paper-description">Analyzing how automation differentially affects male and female workers based on their task composition.</p>
+                    <!-- Collapsible description -->
+                    <button class="abstract-toggle" aria-expanded="false">
+                        <span class="toggle-text">Show Description</span>
+                        <svg class="toggle-icon" width="12" height="12" viewBox="0 0 12 12">
+                            <path d="M2 4l4 4 4-4" stroke="currentColor" fill="none" stroke-width="2"/>
+                        </svg>
+                    </button>
+                    <div class="paper-abstract-collapsible" hidden>
+                        <p>Analyzing how automation differentially affects male and female workers based on their task composition.</p>
+                    </div>
                 </article>
             </div>
         </section>
@@ -188,7 +229,14 @@
                 
                 this.setAttribute('aria-expanded', !isExpanded);
                 abstract.hidden = isExpanded;
-                toggleText.textContent = isExpanded ? 'Show Abstract' : 'Hide Abstract';
+                
+                // Update text based on context
+                if (this.closest('#work-in-progress')) {
+                    toggleText.textContent = isExpanded ? 'Show Description' : 'Hide Description';
+                } else {
+                    toggleText.textContent = isExpanded ? 'Show Abstract' : 'Hide Abstract';
+                }
+                
                 this.classList.toggle('expanded');
             });
         });
