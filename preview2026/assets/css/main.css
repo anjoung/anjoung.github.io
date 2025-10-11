@@ -193,10 +193,10 @@ a:hover {
     padding: 0 var(--spacing-md);
 }
 
-/* Hero Section - Update the grid to accommodate wider photo */
+/* Hero Section - Update the grid to accommodate square photo */
 .hero-grid {
     display: grid;
-    grid-template-columns: 440px 1fr;  /* Increased from 220px to 440px */
+    grid-template-columns: 440px 1fr;  /* Keep same width */
     gap: var(--spacing-xl);
     align-items: start;
     max-width: 900px;
@@ -249,10 +249,10 @@ a:hover {
     font-weight: 500;
 }
 
-/* Photo Container - Now 16:8 ratio (440px x 220px) */
+/* Photo Container - Now square (440px x 440px) - DOUBLED HEIGHT */
 .hero-photo {
-    width: 440px;    /* Doubled width from 220px */
-    height: 220px;   /* Kept same height for 16:8 ratio */
+    width: 440px;    /* Same width */
+    height: 440px;   /* Doubled height from 220px to 440px */
     border-radius: 8px;
     overflow: hidden;
     box-shadow: var(--shadow-md);
@@ -265,14 +265,14 @@ a:hover {
     object-fit: cover;
 }
 
-/* Mobile Responsive - Update for larger photo */
+/* Mobile Responsive - Update for square photo */
 @media (max-width: 768px) {
     /* ... other mobile styles ... */
     
     /* Hero photo on mobile - scale down proportionally */
     .hero-photo {
-        width: 320px;    /* Smaller on mobile but maintains ratio */
-        height: 160px;   /* 16:8 ratio maintained */
+        width: 320px;    /* Smaller on mobile */
+        height: 320px;   /* Square ratio maintained */
         margin: 0 auto;
     }
 }
@@ -281,7 +281,7 @@ a:hover {
 @media (max-width: 480px) {
     .hero-photo {
         width: 280px;    /* Even smaller for tiny screens */
-        height: 140px;   /* Still maintains 16:8 ratio */
+        height: 280px;   /* Still maintains square ratio */
     }
 }
 
@@ -429,9 +429,10 @@ a:hover {
         text-align: center;
     }
     
+    /* Hero photo mobile - square now */
     .hero-photo {
-        width: 180px;
-        height: 180px;
+        width: 240px;
+        height: 240px;
         margin: 0 auto;
     }
     
