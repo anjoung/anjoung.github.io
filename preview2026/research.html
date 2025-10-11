@@ -15,7 +15,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Crimson+Text:ital@0;1&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Navigation (same as index) -->
+    <!-- Navigation -->
     <nav class="main-nav" role="navigation" aria-label="Main navigation">
         <div class="nav-container">
             <div class="nav-brand">
@@ -29,9 +29,7 @@
             <div class="nav-menu">
                 <a href="index.html">Home</a>
                 <a href="research.html" class="active">Research</a>
-                <a href="cv.html">CV</a>
-                <a href="teaching.html">Teaching</a>
-                <a href="contact.html">Contact</a>
+                <a href="CV.pdf">CV</a>
                 <button class="theme-toggle" aria-label="Toggle dark mode">
                     <svg class="sun-icon" width="20" height="20" fill="currentColor">
                         <circle cx="10" cy="10" r="5"></circle>
@@ -67,6 +65,7 @@
                         <span class="paper-status">Working Paper</span>
                         <span class="paper-date">November 2025</span>
                     </div>
+                    <!-- JMP Abstract is always visible -->
                     <div class="paper-abstract">
                         <h4>Abstract</h4>
                         <p>This paper examines the long-term effects of parental job displacement on children's educational and labor market outcomes. Using administrative data linked across generations and leveraging mass layoffs for identification, I find that parental job loss during critical developmental periods leads to significant reductions in children's lifetime earnings. The effects are particularly pronounced for families with limited access to social insurance programs. I develop a dynamic model of human capital investment to decompose the mechanisms and find that credit constraints account for 40% of the effect, while changes in parental time investment explain an additional 30%.</p>
@@ -93,7 +92,14 @@
                         <span class="paper-coauthors">with Jane Smith and Robert Johnson</span>
                         <span class="paper-date">August 2025</span>
                     </div>
-                    <div class="paper-abstract">
+                    <!-- Collapsible abstract -->
+                    <button class="abstract-toggle" aria-expanded="false">
+                        <span class="toggle-text">Show Abstract</span>
+                        <svg class="toggle-icon" width="12" height="12" viewBox="0 0 12 12">
+                            <path d="M2 4l4 4 4-4" stroke="currentColor" fill="none" stroke-width="2"/>
+                        </svg>
+                    </button>
+                    <div class="paper-abstract-collapsible" hidden>
                         <p>We study the impact of Seattle's minimum wage increase on the growth of gig economy participation. Using a difference-in-differences design and novel administrative data from platform companies, we find that the minimum wage increase led to a 15% increase in gig economy participation among affected workers.</p>
                     </div>
                     <div class="paper-links">
@@ -110,7 +116,14 @@
                         <span class="paper-date">May 2025</span>
                         <span class="paper-status">R&R at Journal of Labor Economics</span>
                     </div>
-                    <div class="paper-abstract">
+                    <!-- Collapsible abstract -->
+                    <button class="abstract-toggle" aria-expanded="false">
+                        <span class="toggle-text">Show Abstract</span>
+                        <svg class="toggle-icon" width="12" height="12" viewBox="0 0 12 12">
+                            <path d="M2 4l4 4 4-4" stroke="currentColor" fill="none" stroke-width="2"/>
+                        </svg>
+                    </button>
+                    <div class="paper-abstract-collapsible" hidden>
                         <p>This paper quantifies the contribution of declining unionization to rising income inequality in the United States. I develop a structural model of union formation and wage determination, and use it to conduct counterfactual simulations. The results suggest that union decline can explain 20-30% of the increase in wage inequality since 1980.</p>
                     </div>
                     <div class="paper-links">
@@ -149,35 +162,36 @@
                 </article>
             </div>
         </section>
-
-        <!-- Publications (for future use) -->
-        <section class="section" id="publications" style="display: none;">
-            <div class="container">
-                <h2 class="section-title">Publications</h2>
-                <!-- Will be populated when you have publications -->
-            </div>
-        </section>
     </main>
 
-    <!-- Footer (same as index) -->
-    <footer class="main-footer">
+    <!-- Minimal Footer -->
+    <footer class="main-footer-minimal">
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-info">
-                    <p>&copy; 2025 Andrew Joung. All rights reserved.</p>
-                    <p>PhD Candidate, Department of Economics<br>
-                    University of Michigan - Ann Arbor</p>
-                </div>
-                <div class="footer-links">
-                    <a href="mailto:ajoung@umich.edu">Email</a>
+            <div class="footer-content-minimal">
+                <p>&copy; 2025 Andrew Joung</p>
+                <div class="footer-links-minimal">
                     <a href="#">LinkedIn</a>
                     <a href="#">Google Scholar</a>
-                    <a href="#">ORCID</a>
                 </div>
             </div>
         </div>
     </footer>
 
     <script src="assets/js/main.js"></script>
+    <script>
+        // Add functionality for collapsible abstracts
+        document.querySelectorAll('.abstract-toggle').forEach(button => {
+            button.addEventListener('click', function() {
+                const abstract = this.nextElementSibling;
+                const isExpanded = this.getAttribute('aria-expanded') === 'true';
+                const toggleText = this.querySelector('.toggle-text');
+                
+                this.setAttribute('aria-expanded', !isExpanded);
+                abstract.hidden = isExpanded;
+                toggleText.textContent = isExpanded ? 'Show Abstract' : 'Hide Abstract';
+                this.classList.toggle('expanded');
+            });
+        });
+    </script>
 </body>
 </html>
