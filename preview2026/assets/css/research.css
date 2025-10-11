@@ -11,7 +11,7 @@
 .research-paper {
     background: var(--color-bg);
     border-radius: 8px;
-    padding: var(--spacing-lg);
+    padding: var(--spacing-xs);
     margin-bottom: var(--spacing-xs);
     transition: none;  /* No hover effects */
 }
@@ -19,7 +19,7 @@
 .research-paper-compact {
     background: var(--color-bg);
     border-radius: 8px;
-    padding: var(--spacing-md);  /* Less padding */
+    padding: var(--spacing-xs);  /* Less padding */
     margin-bottom: var(--spacing-xs);  /* Less margin */
     transition: none;  /* No hover effects */
 }
@@ -65,8 +65,8 @@
 .paper-meta {
     display: flex;
     flex-wrap: wrap;
-    gap: var(--spacing-sm);
-    margin-bottom: var(--spacing-sm);
+    gap: var(--spacing-xs);
+    margin-bottom: var(--spacing-xs);
     font-size: 0.9rem;
     color: var(--color-text-secondary);
 }
@@ -133,13 +133,13 @@
 
 /* Paper Abstract */
 .paper-abstract {
-    margin: var(--spacing-md) 0;
+    margin: var(--spacing-xs) 0;
 }
 
 .paper-abstract h4 {
     font-size: 0.875rem;
     color: var(--color-text-secondary);
-    margin-bottom: var(--spacing-sm);
+    margin-bottom: var(--spacing-xs);
     text-transform: uppercase;
     letter-spacing: 0.5px;
     font-weight: 600;
@@ -153,8 +153,8 @@
 
 /* Collapsible Abstract */
 .paper-abstract-collapsible {
-    margin: var(--spacing-xs) 0 var(--spacing-sm) 0;
-    padding: var(--spacing-sm);
+    margin: var(--spacing-xs) 0 var(--spacing-xs) 0;
+    padding: var(--spacing-xs);
     background: var(--color-bg-light);
     border-radius: 4px;
     border-left: 3px solid var(--color-primary);
@@ -172,14 +172,14 @@
     display: flex;
     flex-wrap: wrap;
     gap: var(--spacing-xs);
-    margin-top: var(--spacing-sm);
+    margin-top: var(--spacing-xs);
 }
 
 .paper-link {
     color: var(--color-primary);
     font-weight: 500;
     font-size: 0.875rem;
-    padding-right: var(--spacing-sm);
+    padding-right: var(--spacing-xs);
     border-right: 1px solid var(--color-border);
 }
 
@@ -193,7 +193,7 @@
 
 /* Work in Progress Items - More Compact */
 .research-item {
-    padding: var(--spacing-sm);
+    padding: var(--spacing-xs);
     margin-bottom: var(--spacing-xs);  /* Reduced spacing */
     background: var(--color-bg);
     border-radius: 4px;
