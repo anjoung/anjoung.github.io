@@ -272,6 +272,27 @@
         }
     };
 
+    // Handle abstract/description toggles
+document.querySelectorAll('.abstract-toggle').forEach(button => {
+    button.addEventListener('click', function() {
+        const isExpanded = this.getAttribute('aria-expanded') === 'true';
+        const content = this.closest('article').querySelector('.paper-abstract-collapsible, .paper-description-collapsible');
+        
+        if (content) {
+            if (isExpanded) {
+                content.style.display = 'none';
+                this.setAttribute('aria-expanded', 'false');
+                this.querySelector('.toggle-text').textContent = this.querySelector('.toggle-text').textContent.replace('Hide', 'Show');
+            } else {
+                content.style.display = 'block';
+                this.setAttribute('aria-expanded', 'true');
+                this.querySelector('.toggle-text').textContent = this.querySelector('.toggle-text').textContent.replace('Show', 'Hide');
+            }
+            this.classList.toggle('expanded');
+        }
+    });
+});
+
     // ========================================
     // Performance Monitoring
     // ========================================
