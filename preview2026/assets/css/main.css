@@ -249,10 +249,10 @@ a:hover {
     font-weight: 500;
 }
 
-/* Photo Container - Now square (440px x 440px) - DOUBLED HEIGHT */
+/* Photo Container - Now 440px x 550px (25% taller than square) */
 .hero-photo {
     width: 440px;    /* Same width */
-    height: 440px;   /* Doubled height from 220px to 440px */
+    height: 550px;   /* 25% taller than square (440 + 110 = 550) */
     border-radius: 8px;
     overflow: hidden;
     box-shadow: var(--shadow-md);
@@ -265,14 +265,14 @@ a:hover {
     object-fit: cover;
 }
 
-/* Mobile Responsive - Update for square photo */
+/* Mobile Responsive - Update for taller photo */
 @media (max-width: 768px) {
     /* ... other mobile styles ... */
     
     /* Hero photo on mobile - scale down proportionally */
     .hero-photo {
         width: 320px;    /* Smaller on mobile */
-        height: 320px;   /* Square ratio maintained */
+        height: 400px;   /* Maintains 4:5 ratio */
         margin: 0 auto;
     }
 }
@@ -281,7 +281,7 @@ a:hover {
 @media (max-width: 480px) {
     .hero-photo {
         width: 280px;    /* Even smaller for tiny screens */
-        height: 280px;   /* Still maintains square ratio */
+        height: 350px;   /* Still maintains 4:5 ratio */
     }
 }
 
@@ -429,10 +429,10 @@ a:hover {
         text-align: center;
     }
     
-    /* Hero photo mobile - square now */
+    /* Hero photo mobile - maintains 4:5 ratio */
     .hero-photo {
         width: 240px;
-        height: 240px;
+        height: 300px;
         margin: 0 auto;
     }
     
