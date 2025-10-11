@@ -12,10 +12,10 @@
     <link rel="stylesheet" href="assets/css/research.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Crimson+Text:ital@0;1&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Navigation (same as index) -->
+    <!-- Navigation -->
     <nav class="main-nav" role="navigation" aria-label="Main navigation">
         <div class="nav-container">
             <div class="nav-brand">
@@ -29,93 +29,122 @@
             <div class="nav-menu">
                 <a href="index.html">Home</a>
                 <a href="research.html" class="active">Research</a>
-                <a href="cv.html">CV</a>
-                <a href="teaching.html">Teaching</a>
-                <a href="contact.html">Contact</a>
-                <button class="theme-toggle" aria-label="Toggle dark mode">
-                    <svg class="sun-icon" width="20" height="20" fill="currentColor">
-                        <circle cx="10" cy="10" r="5"></circle>
-                        <path d="M10 0v2M10 18v2M0 10h2M18 10h2M2.93 2.93l1.41 1.41M14.66 14.66l1.41 1.41M2.93 17.07l1.41-1.41M14.66 5.34l1.41-1.41"></path>
-                    </svg>
-                    <svg class="moon-icon" width="20" height="20" fill="currentColor">
-                        <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
-                    </svg>
-                </button>
+                <a href="https://andrewjoung.com/JoungAndrew_CV.pdf">CV</a>
             </div>
         </div>
     </nav>
 
-    <!-- Main Content -->
-    <main id="main-content">
-        <!-- Page Header -->
-        <section class="page-header">
-            <div class="container">
-                <h1 class="page-title">Research</h1>
-                <p class="page-subtitle">My research focuses on labor economics, with particular emphasis on intergenerational effects of economic shocks and labor market dynamics.</p>
-            </div>
-        </section>
-
+    <!-- Main Content - No Page Header Banner -->
+    <main id="main-content" class="research-main">
+        
         <!-- Job Market Paper -->
-        <section class="section" id="job-market-paper">
+        <section class="section section-first" id="job-market-paper">
             <div class="container">
                 <h2 class="section-title">Job Market Paper</h2>
-                <article class="research-paper featured">
+                <article class="research-paper featured-simple">
                     <h3 class="paper-title">
-                        "Intergenerational Effects of Local Labor Market Shocks: Evidence from Plant Closures"
+                        "Parental Job Loss and Geographic Mobility"
                     </h3>
                     <div class="paper-meta">
                         <span class="paper-status">Working Paper</span>
-                        <span class="paper-date">November 2025</span>
+                        <span class="paper-coauthors">with James Reeves. FSRDC Project #2854.</span>
                     </div>
+                    <!-- JMP Abstract is always visible -->
                     <div class="paper-abstract">
                         <h4>Abstract</h4>
-                        <p>This paper examines the long-term effects of parental job displacement on children's educational and labor market outcomes. Using administrative data linked across generations and leveraging mass layoffs for identification, I find that parental job loss during critical developmental periods leads to significant reductions in children's lifetime earnings. The effects are particularly pronounced for families with limited access to social insurance programs. I develop a dynamic model of human capital investment to decompose the mechanisms and find that credit constraints account for 40% of the effect, while changes in parental time investment explain an additional 30%.</p>
+                        <p>Using restricted Census microdata, we examine how the location of parental job loss affects children's mobility, 
+                            neighborhood quality, and human capital. Following job loss, children experience a permanent rise in commuting 
+                            zone outmigration. Without accounting for the location of the job loss, we find that this mobility leads 
+                            children to worse neighborhoods with insignificant changes to college attendance. However, this masks potential 
+                            benefits from job loss-induced outmigration: families in lower opportunity areas have greater potential gains 
+                            from leaving than those in higher opportunity areas. Exploiting labor market scarring from the Great Recession, 
+                            we show that children whose parents lost jobs in scarred markets experience greater outmigration, improved 
+                            neighborhood quality, and increased college attendance.</p>
                     </div>
                     <div class="paper-links">
-                        <a href="#" class="btn btn-primary">Download PDF</a>
-                        <a href="#" class="btn btn-secondary">Online Appendix</a>
-                        <a href="#" class="btn btn-outline">Slides</a>
+                        <a href="https://andrewjoung.com/JoungAndrew_JMP.pdf" class="btn btn-primary">Download PDF</a>
+                        <a href="https://andrewjoung.com/DataRepo/CPR_documentation.pdf" class="btn btn-secondary">LEHD CPR Documentation</a>
                     </div>
                 </article>
             </div>
         </section>
 
-        <!-- Working Papers -->
-        <section class="section" id="working-papers">
+        <!-- Published Papers -->
+        <section class="section" id="published-papers">
             <div class="container">
-                <h2 class="section-title">Working Papers</h2>
+                <h2 class="section-title">Published Papers</h2>
                 
-                <article class="research-paper">
+                <article class="research-paper-compact">
                     <h3 class="paper-title">
-                        "The Minimum Wage and the Gig Economy: Evidence from Seattle"
+                        "Opening the Black Box of Self-Employment: Identifying Alternative Work Arrangements in the United States"
                     </h3>
+                    <div class="paper-coauthors-inline">with Joelle Abramowitz</div>
                     <div class="paper-meta">
-                        <span class="paper-coauthors">with Jane Smith and Robert Johnson</span>
-                        <span class="paper-date">August 2025</span>
+                        <span class="paper-journal">Industrial and Labor Relations Review</span>
+                        <span class="paper-date">Forthcoming</span>
+                        <a href="https://andrewjoung.com/uploaded_papers/finalpaper_ILRR.pdf" class="paper-link">Pre-print</a>
                     </div>
-                    <div class="paper-abstract">
-                        <p>We study the impact of Seattle's minimum wage increase on the growth of gig economy participation. Using a difference-in-differences design and novel administrative data from platform companies, we find that the minimum wage increase led to a 15% increase in gig economy participation among affected workers.</p>
-                    </div>
-                    <div class="paper-links">
-                        <a href="#" class="paper-link">Working Paper</a>
-                        <a href="#" class="paper-link">Data</a>
+                    <!-- Collapsible abstract -->
+                    <button class="abstract-toggle" aria-expanded="false">
+                        <span class="toggle-text">Show Abstract</span>
+                        <svg class="toggle-icon" width="12" height="12" viewBox="0 0 12 12">
+                            <path d="M2 4l4 4 4-4" stroke="currentColor" fill="none" stroke-width="2"/>
+                        </svg>
+                    </button>
+                    <div class="paper-abstract-collapsible" hidden>
+                        <p>While 18.4% of workers report engaging in self-employment, there exists a dearth of data identifying heterogeneity 
+                            in the nature of these work arrangements. To address this gap, this paper uses novel data using machine learning 
+                            leveraging internal data collected in the 2003-2019 waves of the Panel Study of Income Dynamics on respondents' 
+                            narrative descriptions of their industry and type of work along with their employer names. The paper uses these data 
+                            to examine trends in the prevalence and nature of self-employment work arrangements, transitions across these 
+                            arrangements, and who works in these arrangements. Findings show disparate trends in the share of workers engaging in 
+                            different types of self-employment work arrangements that would otherwise be masked. Further results suggest that the 
+                            informally self-employed tend to be less educated, are less likely to be male and non-Hispanic White, have less labor 
+                            income, and have worse measures of wellbeing.</p>
                     </div>
                 </article>
 
-                <article class="research-paper">
+                <article class="research-paper-compact">
                     <h3 class="paper-title">
-                        "Union Decline and Rising Income Inequality: A Quantitative Assessment"
+                        "Understanding Self-Employment Trajectories over the Life Course in the United States"
                     </h3>
+                    <div class="paper-coauthors-inline">with Joelle Abramowitz</div>
                     <div class="paper-meta">
-                        <span class="paper-date">May 2025</span>
-                        <span class="paper-status">R&R at Journal of Labor Economics</span>
+                        <span class="paper-journal"><a href="https://www.nber.org/books-and-chapters/changing-nature-work">The Changing Nature of Work</a> <em>(conference volume)</em></span>
+                        <span class="paper-date">Forthcoming</span>
+                        <a href="https://conference.nber.org/conf_papers/f208449.pdf" class="paper-link">Pre-print</a>
                     </div>
-                    <div class="paper-abstract">
-                        <p>This paper quantifies the contribution of declining unionization to rising income inequality in the United States. I develop a structural model of union formation and wage determination, and use it to conduct counterfactual simulations. The results suggest that union decline can explain 20-30% of the increase in wage inequality since 1980.</p>
+                </article>
+
+                <article class="research-paper-compact">
+                    <h3 class="paper-title">
+                        "Effect of Different Financial Incentive Structures on Promoting Physical Activity Among Adults: A Randomized Clinical Trial"
+                    </h3>
+                    <div class="paper-coauthors-inline">with Chethan Bachireddy, Leslie K. John, et al.</div>
+                    <div class="paper-meta">
+                        <span class="paper-journal">JAMA Open Network</span>
+                        <span class="paper-date">2019</span>
+                        <a href="https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2748659" class="paper-link">Published version</a>
                     </div>
-                    <div class="paper-links">
-                        <a href="#" class="paper-link">Working Paper</a>
-                        <a href="#" class="paper-link">Replication Package</a>
+                    <!-- Collapsible abstract -->
+                    <button class="abstract-toggle" aria-expanded="false">
+                        <span class="toggle-text">Show Abstract</span>
+                        <svg class="toggle-icon" width="12" height="12" viewBox="0 0 12 12">
+                            <path d="M2 4l4 4 4-4" stroke="currentColor" fill="none" stroke-width="2"/>
+                        </svg>
+                    </button>
+                    <div class="paper-abstract-collapsible" hidden>
+                        <p>Few adults engage in recommended levels of physical activity. Financial incentives can promote physical activity, 
+                             but little is known about how the structure of these incentives influences their effectiveness (eg, how incentives
+                             are disbursed over time). To determine if it is more effective to disburse fixed total financial incentives at a 
+                             constant, increasing, or decreasing rate to encourage physical activity, we implement a 2-week randomized clinical 
+                             trial was conducted from June 2 to 15, 2014, using an online platform that automatically records daily steps of 
+                             pedometer-wearing users and awards points redeemable for cash. Participants in the control group received a constant 
+                             daily rate of $0.00001 per step. The 3 intervention groups received a 20-fold incentive increase ($0.00020 per step) 
+                             distributed differently during the 2 weeks of the study: at a constant, increasing, or decreasing rate. This study 
+                             found that financial incentives for physical activity were more effective during a payment period when they were 
+                             offered at a constant rate rather than an increasing or decreasing rate. However, this effectiveness dissipated shortly
+                             after the incentives were removed.</p>
                     </div>
                 </article>
             </div>
@@ -128,56 +157,127 @@
                 
                 <article class="research-item">
                     <h3 class="paper-title">
-                        "The Future of Self-Employment: Technology and Labor Market Transformation"
+                        "Minimum Wages and Interstate Job Flows"
                     </h3>
-                    <p class="paper-description">Examining how technological change affects the decision to become self-employed and the returns to self-employment across different skill levels.</p>
+                     <p class="paper-coauthors-inline">with Emir Murathanoglu</p>
+                    <!-- Collapsible description -->
+                    <button class="abstract-toggle" aria-expanded="false">
+                        <span class="toggle-text">Show Description</span>
+                        <svg class="toggle-icon" width="12" height="12" viewBox="0 0 12 12">
+                            <path d="M2 4l4 4 4-4" stroke="currentColor" fill="none" stroke-width="2"/>
+                        </svg>
+                    </button>
+                    <div class="paper-abstract-collapsible" hidden>
+                        <p>We resolve a puzzle in the minimum wage literature: while minimum wage increases raise low-wage workers' earnings with minimal job losses—making these locations theoretically more attractive—existing evidence finds that higher minimum wages reduce in-migration and increase out-migration. Using the LEHD's Job-to-Job Flows Origin-Destination data, we estimate a model-derived specification that properly accounts for workers' bilateral exposure to minimum wage changes from their own state and other states. We find that minimum wage increases raise direct inflows to a state's restaurant industry by approximately 6% after three years, with effects concentrated among workers who predominantly move to establishments with 250+ employees—consistent with larger firms' ability to absorb wage increases.</p>
+                    </div>
+                </article>
+                
+                <article class="research-item">
+                    <h3 class="paper-title">
+                        "The Legalization of Collective Bargaining at Nonprofit Hospitals"
+                    </h3>
+                    <!-- Collapsible description -->
+                    <button class="abstract-toggle" aria-expanded="false">
+                        <span class="toggle-text">Show Description</span>
+                        <svg class="toggle-icon" width="12" height="12" viewBox="0 0 12 12">
+                            <path d="M2 4l4 4 4-4" stroke="currentColor" fill="none" stroke-width="2"/>
+                        </svg>
+                    </button>
+                    <div class="paper-abstract-collapsible" hidden>
+                        <p>This paper examines how the 1974 NLRB extension of collective bargaining rights to 1.6 million workers at 3,400 nonprofit hospitals affected hospital costs, capacity, and employment. Using a novel data linkage between NLRB union election records and hospital-level AHA Annual Survey data, I capture the exact timing of unionization at the hospital-level immediately surrounding legalization to identify market-wide effects. Preliminary results suggest that hospital unions lead to increases across all operational measures—beds, inpatient days, admissions, total expenditures, payroll, and employment.</p>
+                    </div>
                 </article>
 
                 <article class="research-item">
                     <h3 class="paper-title">
-                        "Spatial Mobility and Intergenerational Transmission of Economic Status"
+                        "Suddenly Single: Long-term Effects of Parental Death on Surviving Family"
                     </h3>
-                    <p class="paper-description">with Maria Garcia</p>
-                    <p class="paper-description">Investigating how geographic mobility affects the intergenerational transmission of income and education.</p>
+                    <p class="paper-coauthors-inline">with Zoey Chopra. FSRDC Project #2854.</p>
+                    <!-- Collapsible description -->
+                    <button class="abstract-toggle" aria-expanded="false">
+                        <span class="toggle-text">Show Description</span>
+                        <svg class="toggle-icon" width="12" height="12" viewBox="0 0 12 12">
+                            <path d="M2 4l4 4 4-4" stroke="currentColor" fill="none" stroke-width="2"/>
+                        </svg>
+                    </button>
+                    <div class="paper-abstract-collapsible" hidden>
+                        <p>We investigate the long-term consequences of childhood exposure to parental death on surviving children's economic, educational, health, and criminal justice outcomes. This project links mortality records, earnings histories, and large-scale survey data to provide the most comprehensive analysis of parental death's intergenerational effects in the U.S., with implications for designing policies that break cycles of intergenerational disadvantage.</p>
+                    </div>
                 </article>
 
                 <article class="research-item">
                     <h3 class="paper-title">
-                        "Automation and the Gender Wage Gap: A Task-Based Approach"
+                        "Great Recession Exposure and Criminal Justice Involvement: Evidence from Linked Administrative Data"
                     </h3>
-                    <p class="paper-description">Analyzing how automation differentially affects male and female workers based on their task composition.</p>
+                    <p class="paper-coauthors-inline">with James Reeves. FSRDC Project #2854. </p>
+                    <!-- Collapsible description -->
+                    <button class="abstract-toggle" aria-expanded="false">
+                        <span class="toggle-text">Show Description</span>
+                        <svg class="toggle-icon" width="12" height="12" viewBox="0 0 12 12">
+                            <path d="M2 4l4 4 4-4" stroke="currentColor" fill="none" stroke-width="2"/>
+                        </svg>
+                    </button>
+                    <div class="paper-abstract-collapsible" hidden>
+                        <p>We examine the impact of the Great Recession on children's future criminal justice involvement. This work exploits spatial variation in both the initial shock and recovery patterns, utilizing data from the Criminal Justice Administrative Records System (CJARS) linked to the broader Census data infrastructure to understand how economic disruptions shape children's life trajectories.</p>
+                    </div>
+                    
                 </article>
-            </div>
-        </section>
 
-        <!-- Publications (for future use) -->
-        <section class="section" id="publications" style="display: none;">
-            <div class="container">
-                <h2 class="section-title">Publications</h2>
-                <!-- Will be populated when you have publications -->
+                <article class="research-item">
+                    <h3 class="paper-title">
+                        "Self-Employment Transitions Among Older Workers"
+                    </h3>
+                    <p class="paper-coauthors-inline">with Joelle Abramowitz </p>
+                    <!-- Collapsible description -->
+                    <button class="abstract-toggle" aria-expanded="false">
+                        <span class="toggle-text">Show Description</span>
+                        <svg class="toggle-icon" width="12" height="12" viewBox="0 0 12 12">
+                            <path d="M2 4l4 4 4-4" stroke="currentColor" fill="none" stroke-width="2"/>
+                        </svg>
+                    </button>
+                    <div class="paper-abstract-collapsible" hidden>
+                        <p>Building on our research examining heterogeneity within self-employment, we explore how self-employment functions across the life course using the Health and Retirement Study. We find that informal self-employment serves as a bridge to retirement, with older workers disproportionately moving into informal self-employment as they transition out of traditional employment.</p>
+                    </div>
+                </article>
             </div>
         </section>
     </main>
 
-    <!-- Footer (same as index) -->
-    <footer class="main-footer">
+    <!-- Minimal Footer -->
+    <footer class="main-footer-minimal">
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-info">
-                    <p>&copy; 2025 Andrew Joung. All rights reserved.</p>
-                    <p>PhD Candidate, Department of Economics<br>
-                    University of Michigan - Ann Arbor</p>
-                </div>
-                <div class="footer-links">
-                    <a href="mailto:ajoung@umich.edu">Email</a>
-                    <a href="#">LinkedIn</a>
-                    <a href="#">Google Scholar</a>
-                    <a href="#">ORCID</a>
+            <div class="footer-content-minimal">
+                <p>&copy; 2025 Andrew Joung</p>
+                <div class="footer-links-minimal">
+                    <a href="https://www.linkedin.com/in/andrew-joung/">LinkedIn</a>
+                    <a href="https://scholar.google.com/citations?user=AFNID-EAAAAJ&hl=en">Google Scholar</a>
                 </div>
             </div>
         </div>
     </footer>
 
     <script src="assets/js/main.js"></script>
+    <script>
+        // Add functionality for collapsible abstracts
+        document.querySelectorAll('.abstract-toggle').forEach(button => {
+            button.addEventListener('click', function() {
+                const abstract = this.nextElementSibling;
+                const isExpanded = this.getAttribute('aria-expanded') === 'true';
+                const toggleText = this.querySelector('.toggle-text');
+                
+                this.setAttribute('aria-expanded', !isExpanded);
+                abstract.hidden = isExpanded;
+                
+                // Update text based on context
+                if (this.closest('#work-in-progress')) {
+                    toggleText.textContent = isExpanded ? 'Description' : 'Description';
+                } else {
+                    toggleText.textContent = isExpanded ? 'Abstract' : 'Abstract';
+                }
+                
+                this.classList.toggle('expanded');
+            });
+        });
+    </script>
 </body>
 </html>
