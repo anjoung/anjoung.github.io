@@ -103,8 +103,8 @@
     font-weight: 500;
     font-size: 0.875rem;
     transition: var(--transition-fast);
-    margin-bottom: 0.25rem;  /* Less margin */
-    margin-top: 0.25rem;
+    margin-bottom: 0rem;  /* Less margin */
+    margin-top: 0rem;
 }
 
 .abstract-toggle:hover {
