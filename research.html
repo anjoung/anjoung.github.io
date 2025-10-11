@@ -255,6 +255,32 @@
             </div>
         </div>
     </footer>
+    <script src="assets/js/main.js"></script>
 
+
+    <script>
+
+
+        // Add functionality for collapsible abstracts
+
+
+        document.querySelectorAll('.abstract-toggle').forEach(button => {
+            button.addEventListener('click', function() {
+                const abstract = this.nextElementSibling;
+                const isExpanded = this.getAttribute('aria-expanded') === 'true';
+                const toggleText = this.querySelector('.toggle-text');             
+                this.setAttribute('aria-expanded', !isExpanded);
+                abstract.hidden = isExpanded;
+                
+                // Update text based on context
+                if (this.closest('#work-in-progress')) {
+                    toggleText.textContent = isExpanded ? 'Description' : 'Description';
+                } else {
+                    toggleText.textContent = isExpanded ? 'Abstract' : 'Abstract';
+                }    
+                this.classList.toggle('expanded');
+            });
+        });
+    </script>
 </body>
 </html>
