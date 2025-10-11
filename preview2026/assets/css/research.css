@@ -144,21 +144,6 @@
 }
 
 /* Collapsible Abstract */
-.paper-description-collapsible {
-    margin: 0.5rem 0 0 0;
-    padding: 0.75rem;
-    background: var(--color-bg-light);
-    border-radius: 4px;
-    border-left: 3px solid var(--color-primary);
-}
-
-.paper-description-collapsible p {
-    text-align: left;
-    line-height: 1.6;
-    color: var(--color-text);
-    margin: 0;
-    font-size: 0.9rem;
-}
 .paper-abstract-collapsible {
     margin: 0;  /* Less margin */
     padding: 0.75rem;  /* Less padding */
