@@ -1,0 +1,197 @@
+/* ========================================
+   Research Page Specific Styles
+   ======================================== */
+
+/* Page Header */
+.page-header {
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+    color: white;
+    padding: var(--spacing-xxl) 0;
+    text-align: center;
+}
+
+.page-title {
+    color: white;
+    font-size: 2.5rem;
+    margin-bottom: var(--spacing-sm);
+}
+
+.page-subtitle {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.15rem;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* Research Papers */
+.research-paper {
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+    padding: var(--spacing-lg);
+    margin-bottom: var(--spacing-lg);
+    transition: var(--transition);
+}
+
+[data-theme="dark"] .research-paper {
+    background: var(--color-bg-alt);
+}
+
+.research-paper:hover {
+    box-shadow: var(--shadow-md);
+    border-color: var(--color-accent);
+}
+
+/* Featured Paper (Job Market Paper) */
+.research-paper.featured {
+    border: 2px solid var(--color-accent);
+    position: relative;
+    background: linear-gradient(135deg, var(--color-bg) 0%, var(--color-bg-alt) 100%);
+}
+
+.research-paper.featured::before {
+    content: "JOB MARKET PAPER";
+    position: absolute;
+    top: -12px;
+    left: 20px;
+    background: var(--color-accent);
+    color: var(--color-primary);
+    padding: 4px 12px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+/* Paper Elements */
+.paper-title {
+    color: var(--color-primary);
+    font-size: 1.35rem;
+    margin-bottom: var(--spacing-sm);
+    line-height: 1.3;
+}
+
+.paper-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+    font-size: 0.95rem;
+    color: var(--color-text-light);
+}
+
+.paper-meta span {
+    display: flex;
+    align-items: center;
+}
+
+.paper-status {
+    background: var(--color-bg-alt);
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-weight: 500;
+}
+
+.paper-coauthors {
+    font-style: italic;
+}
+
+.paper-abstract {
+    margin: var(--spacing-md) 0;
+}
+
+.paper-abstract h4 {
+    font-size: 1rem;
+    color: var(--color-text);
+    margin-bottom: var(--spacing-sm);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: 600;
+}
+
+.paper-abstract p {
+    text-align: justify;
+    line-height: 1.8;
+    color: var(--color-text);
+}
+
+/* Paper Links */
+.paper-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-sm);
+    margin-top: var(--spacing-md);
+}
+
+.paper-link {
+    color: var(--color-primary);
+    font-weight: 500;
+    padding-right: var(--spacing-md);
+    border-right: 1px solid var(--color-border);
+}
+
+.paper-link:last-child {
+    border-right: none;
+}
+
+.paper-link:hover {
+    text-decoration: underline;
+}
+
+/* Work in Progress Items */
+.research-item {
+    padding: var(--spacing-md);
+    border-left: 3px solid var(--color-accent);
+    margin-bottom: var(--spacing-lg);
+    background: var(--color-bg-alt);
+    border-radius: 0 8px 8px 0;
+}
+
+[data-theme="dark"] .research-item {
+    background: rgba(255, 255, 255, 0.03);
+}
+
+.research-item .paper-title {
+    font-size: 1.15rem;
+    margin-bottom: var(--spacing-xs);
+}
+
+.research-item .paper-description {
+    color: var(--color-text-light);
+    margin-bottom: var(--spacing-xs);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .page-title {
+        font-size: 2rem;
+    }
+    
+    .page-subtitle {
+        font-size: 1rem;
+    }
+    
+    .paper-title {
+        font-size: 1.15rem;
+    }
+    
+    .paper-links {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .paper-links .btn {
+        width: 100%;
+        text-align: center;
+    }
+    
+    .paper-meta {
+        flex-direction: column;
+        gap: var(--spacing-xs);
+    }
+    
+    .paper-abstract p {
+        text-align: left;
+    }
+}
