@@ -99,7 +99,7 @@
     display: inline-flex;
     align-items: center;
     gap: var(--spacing-xs);
-    padding: 0.25rem 0;  /* Less padding */
+    padding: 0;  /* Less padding */
     font-weight: 500;
     font-size: 0.875rem;
     transition: var(--transition-fast);
