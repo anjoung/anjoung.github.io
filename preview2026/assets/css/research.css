@@ -2,52 +2,41 @@
    Research Page Specific Styles
    ======================================== */
 
-/* Page Header */
-.page-header {
-    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
-    color: white;
-    padding: var(--spacing-xxl) 0;
-    text-align: center;
+/* Main content starts right after nav */
+.research-main {
+    background: var(--color-bg-light);
 }
 
-.page-title {
-    color: white;
-    font-size: 2.5rem;
-    margin-bottom: var(--spacing-sm);
-}
-
-.page-subtitle {
-    color: rgba(255, 255, 255, 0.9);
-    font-size: 1.15rem;
-    max-width: 600px;
-    margin: 0 auto;
-    line-height: 1.6;
-}
-
-/* Research Papers */
+/* Research Papers - Compact for non-JMP */
 .research-paper {
     background: var(--color-bg);
-    border: 1px solid var(--color-border);
-    border-radius: 12px;
+    border-radius: 8px;
     padding: var(--spacing-lg);
     margin-bottom: var(--spacing-lg);
-    transition: var(--transition);
+    transition: none;  /* No hover effects */
 }
 
-[data-theme="dark"] .research-paper {
-    background: var(--color-bg-alt);
+.research-paper-compact {
+    background: var(--color-bg);
+    border-radius: 8px;
+    padding: var(--spacing-md);  /* Less padding */
+    margin-bottom: var(--spacing-md);  /* Less margin */
+    transition: none;  /* No hover effects */
 }
 
-.research-paper:hover {
-    box-shadow: var(--shadow-md);
-    border-color: var(--color-accent);
+/* No hover effect */
+.research-paper:hover,
+.research-paper-compact:hover {
+    box-shadow: none;
+    border-color: inherit;
 }
 
 /* Featured Paper (Job Market Paper) */
 .research-paper.featured {
-    border: 2px solid var(--color-accent);
+    border: 2px solid var(--color-primary);  /* Blue border */
     position: relative;
-    background: linear-gradient(135deg, var(--color-bg) 0%, var(--color-bg-alt) 100%);
+    background: var(--color-bg);
+    box-shadow: var(--shadow-md);
 }
 
 .research-paper.featured::before {
@@ -55,8 +44,8 @@
     position: absolute;
     top: -12px;
     left: 20px;
-    background: var(--color-accent);
-    color: var(--color-primary);
+    background: var(--color-primary);
+    color: white;
     padding: 4px 12px;
     border-radius: 4px;
     font-size: 0.75rem;
@@ -66,19 +55,20 @@
 
 /* Paper Elements */
 .paper-title {
-    color: var(--color-primary);
-    font-size: 1.35rem;
-    margin-bottom: var(--spacing-sm);
+    color: var(--color-text);
+    font-size: 1.25rem;
+    margin-bottom: var(--spacing-xs);
     line-height: 1.3;
+    font-weight: 500;
 }
 
 .paper-meta {
     display: flex;
     flex-wrap: wrap;
-    gap: var(--spacing-md);
-    margin-bottom: var(--spacing-md);
-    font-size: 0.95rem;
-    color: var(--color-text-light);
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-sm);
+    font-size: 0.9rem;
+    color: var(--color-text-secondary);
 }
 
 .paper-meta span {
@@ -87,14 +77,26 @@
 }
 
 .paper-status {
-    background: var(--color-bg-alt);
-    padding: 4px 10px;
+    background: var(--color-bg-light);
+    padding: 2px 8px;
     border-radius: 4px;
     font-weight: 500;
 }
 
+.paper-journal {
+    font-style: italic;
+    color: var(--color-primary);
+}
+
 .paper-coauthors {
     font-style: italic;
+}
+
+.paper-coauthors-inline {
+    font-style: italic;
+    color: var(--color-text-secondary);
+    font-size: 0.9rem;
+    margin: 0.25rem 0 0.5rem 0;
 }
 
 /* Abstract Toggle Button */
@@ -108,9 +110,9 @@
     gap: var(--spacing-xs);
     padding: var(--spacing-xs) 0;
     font-weight: 500;
-    font-size: 0.95rem;
+    font-size: 0.875rem;
     transition: var(--transition-fast);
-    margin-bottom: var(--spacing-sm);
+    margin-bottom: var(--spacing-xs);
 }
 
 .abstract-toggle:hover {
@@ -135,8 +137,8 @@
 }
 
 .paper-abstract h4 {
-    font-size: 1rem;
-    color: var(--color-text);
+    font-size: 0.875rem;
+    color: var(--color-text-secondary);
     margin-bottom: var(--spacing-sm);
     text-transform: uppercase;
     letter-spacing: 0.5px;
@@ -144,27 +146,23 @@
 }
 
 .paper-abstract p {
-    text-align: justify;
-    line-height: 1.8;
+    text-align: left;
+    line-height: 1.7;
     color: var(--color-text);
 }
 
 /* Collapsible Abstract */
 .paper-abstract-collapsible {
-    margin: var(--spacing-sm) 0 var(--spacing-md) 0;
-    padding: var(--spacing-md);
-    background: var(--color-bg-alt);
-    border-radius: 8px;
-    border-left: 3px solid var(--color-accent);
-}
-
-[data-theme="dark"] .paper-abstract-collapsible {
-    background: rgba(255, 255, 255, 0.03);
+    margin: var(--spacing-xs) 0 var(--spacing-sm) 0;
+    padding: var(--spacing-sm);
+    background: var(--color-bg-light);
+    border-radius: 4px;
+    border-left: 3px solid var(--color-primary);
 }
 
 .paper-abstract-collapsible p {
-    text-align: justify;
-    line-height: 1.8;
+    text-align: left;
+    line-height: 1.7;
     color: var(--color-text);
     margin: 0;
 }
@@ -173,14 +171,15 @@
 .paper-links {
     display: flex;
     flex-wrap: wrap;
-    gap: var(--spacing-sm);
-    margin-top: var(--spacing-md);
+    gap: var(--spacing-xs);
+    margin-top: var(--spacing-sm);
 }
 
 .paper-link {
     color: var(--color-primary);
     font-weight: 500;
-    padding-right: var(--spacing-md);
+    font-size: 0.875rem;
+    padding-right: var(--spacing-sm);
     border-right: 1px solid var(--color-border);
 }
 
@@ -192,41 +191,28 @@
     text-decoration: underline;
 }
 
-/* Work in Progress Items */
+/* Work in Progress Items - More Compact */
 .research-item {
-    padding: var(--spacing-md);
-    border-left: 3px solid var(--color-accent);
-    margin-bottom: var(--spacing-lg);
-    background: var(--color-bg-alt);
-    border-radius: 0 8px 8px 0;
-}
-
-[data-theme="dark"] .research-item {
-    background: rgba(255, 255, 255, 0.03);
+    padding: var(--spacing-sm);
+    border-left: 3px solid var(--color-primary);
+    margin-bottom: var(--spacing-md);  /* Reduced spacing */
+    background: var(--color-bg);
+    border-radius: 0 4px 4px 0;
 }
 
 .research-item .paper-title {
-    font-size: 1.15rem;
-    margin-bottom: var(--spacing-xs);
-}
-
-.research-item .paper-description {
-    color: var(--color-text-light);
+    font-size: 1.1rem;
     margin-bottom: var(--spacing-xs);
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    .page-title {
-        font-size: 2rem;
-    }
-    
-    .page-subtitle {
-        font-size: 1rem;
+    .section-title {
+        font-size: 1.5rem;
     }
     
     .paper-title {
-        font-size: 1.15rem;
+        font-size: 1.1rem;
     }
     
     .paper-links {
@@ -242,10 +228,5 @@
     .paper-meta {
         flex-direction: column;
         gap: var(--spacing-xs);
-    }
-    
-    .paper-abstract p,
-    .paper-abstract-collapsible p {
-        text-align: left;
     }
 }
