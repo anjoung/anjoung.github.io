@@ -193,13 +193,15 @@ a:hover {
     padding: 0 var(--spacing-md);
 }
 
+/* Hero Section - Update the grid to accommodate wider photo */
 .hero-grid {
     display: grid;
-    grid-template-columns: 220px 1fr;  /* Photo on left */
+    grid-template-columns: 440px 1fr;  /* Increased from 220px to 440px */
     gap: var(--spacing-xl);
     align-items: start;
     max-width: 900px;
 }
+
 
 .hero-name {
     font-size: 2.5rem;
@@ -247,10 +249,10 @@ a:hover {
     font-weight: 500;
 }
 
-/* Photo on Left */
+/* Photo Container - Now 16:8 ratio (440px x 220px) */
 .hero-photo {
-    width: 220px;
-    height: 220px;
+    width: 440px;    /* Doubled width from 220px */
+    height: 220px;   /* Kept same height for 16:8 ratio */
     border-radius: 8px;
     overflow: hidden;
     box-shadow: var(--shadow-md);
@@ -261,6 +263,26 @@ a:hover {
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+
+/* Mobile Responsive - Update for larger photo */
+@media (max-width: 768px) {
+    /* ... other mobile styles ... */
+    
+    /* Hero photo on mobile - scale down proportionally */
+    .hero-photo {
+        width: 320px;    /* Smaller on mobile but maintains ratio */
+        height: 160px;   /* 16:8 ratio maintained */
+        margin: 0 auto;
+    }
+}
+
+/* For very small screens */
+@media (max-width: 480px) {
+    .hero-photo {
+        width: 280px;    /* Even smaller for tiny screens */
+        height: 140px;   /* Still maintains 16:8 ratio */
+    }
 }
 
 /* ========================================
