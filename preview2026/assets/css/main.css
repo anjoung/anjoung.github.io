@@ -206,11 +206,11 @@ a:hover {
 [data-theme="dark"] .theme-toggle .moon-icon { display: block; }
 
 /* ========================================
-   Hero Section
+   Simple Hero Section (Like Michael Stepner)
    ======================================== */
-.hero {
+.hero-simple {
     padding: var(--spacing-xxl) 0;
-    background: linear-gradient(135deg, var(--color-bg-alt) 0%, var(--color-bg) 100%);
+    flex: 1;
 }
 
 .container {
@@ -219,38 +219,37 @@ a:hover {
     padding: 0 var(--spacing-md);
 }
 
-.hero-content {
+.hero-grid {
     display: grid;
     grid-template-columns: 1fr auto;
     gap: var(--spacing-xxl);
-    align-items: center;
+    align-items: start;
+    max-width: 900px;
+}
+
+.hero-name {
+    font-size: 2.5rem;
+    margin-bottom: var(--spacing-xs);
+    color: var(--color-primary);
 }
 
 .hero-title {
-    font-size: 3rem;
-    margin-bottom: var(--spacing-xs);
-    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-}
-
-.hero-subtitle {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     color: var(--color-text);
     margin-bottom: var(--spacing-xs);
 }
 
 .hero-affiliation {
     color: var(--color-text-light);
-    font-size: 1.1rem;
     margin-bottom: var(--spacing-lg);
 }
 
-.hero-description {
-    font-size: 1.1rem;
-    line-height: 1.8;
+.hero-bio {
     margin-bottom: var(--spacing-lg);
+}
+
+.hero-bio p {
+    margin-bottom: var(--spacing-md);
 }
 
 .job-market-notice {
@@ -267,22 +266,19 @@ a:hover {
     color: var(--color-accent);
 }
 
-.hero-links {
-    display: flex;
-    gap: var(--spacing-sm);
-    flex-wrap: wrap;
+.hero-contact {
+    margin-top: var(--spacing-md);
 }
 
-.hero-image {
-    width: 300px;
-    height: 300px;
-    border-radius: 16px;
+.hero-photo {
+    width: 250px;
+    height: 250px;
+    border-radius: 12px;
     overflow: hidden;
-    box-shadow: var(--shadow-lg);
-    background: var(--color-bg-alt);
+    box-shadow: var(--shadow-md);
 }
 
-.hero-image img {
+.hero-photo img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -337,6 +333,45 @@ a:hover {
 }
 
 /* ========================================
+   Minimal Footer (50% smaller)
+   ======================================== */
+.main-footer-minimal {
+    background: var(--color-bg-alt);
+    border-top: 1px solid var(--color-border);
+    padding: var(--spacing-md) 0;
+    margin-top: auto;
+}
+
+.footer-content-minimal {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--spacing-sm);
+}
+
+.footer-content-minimal p {
+    color: var(--color-text-light);
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+.footer-links-minimal {
+    display: flex;
+    gap: var(--spacing-md);
+}
+
+.footer-links-minimal a {
+    color: var(--color-text-light);
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+.footer-links-minimal a:hover {
+    color: var(--color-primary);
+}
+
+/* ========================================
    Sections
    ======================================== */
 .section {
@@ -366,129 +401,6 @@ a:hover {
     border-radius: 2px;
 }
 
-/* Research Interests Grid */
-.interests-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: var(--spacing-lg);
-}
-
-.interest-card {
-    background: var(--color-bg);
-    padding: var(--spacing-lg);
-    border-radius: 12px;
-    border: 1px solid var(--color-border);
-    transition: var(--transition);
-    text-align: center;
-}
-
-[data-theme="dark"] .interest-card {
-    background: var(--color-bg-alt);
-}
-
-.interest-card:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--shadow-lg);
-    border-color: var(--color-accent);
-}
-
-.interest-icon {
-    font-size: 2.5rem;
-    margin-bottom: var(--spacing-sm);
-}
-
-.interest-card h3 {
-    font-size: 1.25rem;
-    margin-bottom: var(--spacing-sm);
-}
-
-.interest-card p {
-    color: var(--color-text-light);
-    font-size: 0.95rem;
-}
-
-/* Work Preview */
-.work-preview {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: var(--spacing-lg);
-}
-
-.paper-card {
-    background: var(--color-bg);
-    padding: var(--spacing-lg);
-    border-radius: 12px;
-    border: 1px solid var(--color-border);
-    transition: var(--transition);
-}
-
-[data-theme="dark"] .paper-card {
-    background: var(--color-bg-alt);
-}
-
-.paper-card:hover {
-    box-shadow: var(--shadow-md);
-}
-
-.paper-title {
-    margin-bottom: var(--spacing-sm);
-}
-
-.paper-description {
-    color: var(--color-text-light);
-    margin-bottom: var(--spacing-md);
-}
-
-.paper-link {
-    font-weight: 500;
-    display: inline-flex;
-    align-items: center;
-}
-
-.paper-link:hover {
-    text-decoration: underline;
-}
-
-/* ========================================
-   Footer
-   ======================================== */
-.main-footer {
-    background: var(--color-bg-alt);
-    border-top: 1px solid var(--color-border);
-    padding: var(--spacing-xl) 0;
-    margin-top: auto;
-}
-
-.footer-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: var(--spacing-lg);
-}
-
-.footer-info {
-    color: var(--color-text-light);
-}
-
-.footer-info p {
-    margin-bottom: var(--spacing-xs);
-}
-
-.footer-links {
-    display: flex;
-    gap: var(--spacing-md);
-}
-
-.footer-links a {
-    color: var(--color-text-light);
-    font-weight: 500;
-}
-
-.footer-links a:hover {
-    color: var(--color-primary);
-}
-
 /* ========================================
    Mobile Responsive
    ======================================== */
@@ -496,8 +408,8 @@ a:hover {
     /* Typography Scale */
     h1 { font-size: 2rem; }
     h2 { font-size: 1.5rem; }
-    .hero-title { font-size: 2.5rem; }
-    .hero-subtitle { font-size: 1.25rem; }
+    .hero-name { font-size: 2rem; }
+    .hero-title { font-size: 1.1rem; }
     
     /* Navigation */
     .nav-toggle {
@@ -523,35 +435,23 @@ a:hover {
     }
     
     /* Hero */
-    .hero-content {
+    .hero-grid {
         grid-template-columns: 1fr;
         text-align: center;
     }
     
-    .hero-image {
+    .hero-photo {
         width: 200px;
         height: 200px;
         margin: 0 auto;
-    }
-    
-    .hero-links {
-        justify-content: center;
-    }
-    
-    /* Grid Adjustments */
-    .interests-grid {
-        grid-template-columns: 1fr;
+        order: -1;
+        margin-bottom: var(--spacing-lg);
     }
     
     /* Footer */
-    .footer-content {
+    .footer-content-minimal {
         flex-direction: column;
         text-align: center;
-    }
-    
-    .footer-links {
-        flex-wrap: wrap;
-        justify-content: center;
     }
 }
 
@@ -559,7 +459,7 @@ a:hover {
    Print Styles
    ======================================== */
 @media print {
-    .main-nav, .main-footer, .theme-toggle, .nav-toggle {
+    .main-nav, .main-footer-minimal, .theme-toggle, .nav-toggle {
         display: none;
     }
     
@@ -573,7 +473,7 @@ a:hover {
         text-decoration: underline;
     }
     
-    .hero {
+    .hero-simple {
         padding: 1rem 0;
     }
     
