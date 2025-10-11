@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    
+    <title>Curriculum Vitae | Andrew Joung - Economics PhD Candidate</title>
+    <meta name="description" content="Academic CV of Andrew Joung, PhD Candidate in Economics at University of Michigan">
+    
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Crimson+Text:ital@0;1&display=swap" rel="stylesheet">
+    
+    <style>
+        /* CV Specific Styles */
+        .cv-header {
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+            color: white;
+            padding: var(--spacing-xl) 0;
+            text-align: center;
+        }
+        
+        .cv-header h1 {
+            color: white;
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .cv-actions {
+            margin-top: var(--spacing-md);
+            display: flex;
+            gap: var(--spacing-sm);
+            justify-content: center;
+        }
+        
+        .cv-section {
+            margin-bottom: var(--spacing-xl);
+            padding: var(--spacing-lg);
+            background: var(--color-bg);
+            border-radius: 12px;
+            border: 1px solid var(--color-border);
+        }
+        
+        [data-theme="dark"] .cv-section {
+            background: var(--color-bg-alt);
+        }
+        
+        .cv-section h2 {
+            font-size: 1.5rem;
+            margin-bottom: var(--spacing-md);
+            padding-bottom: var(--spacing-sm);
+            border-bottom: 2px solid var(--color-accent);
+        }
+        
+        .cv-entry {
+            margin-bottom: var(--spacing-md);
+            padding-left: var(--spacing-md);
+            border-left: 2px solid var(--color-border);
+        }
+        
+        .cv-entry:hover {
+            border-left-color: var(--color-accent);
+        }
+        
+        .cv-entry-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            flex-wrap: wrap;
+            margin-bottom: var(--spacing-xs);
+        }
+        
+        .cv-entry-title {
+            font-weight: 600;
+            color: var(--color-primary);
+            font-size: 1.1rem;
+        }
+        
+        .cv-entry-date {
+            color: var(--color-text-light);
+            font-size: 0.95rem;
+        }
+        
+        .cv-entry-subtitle {
+            color: var(--color-text);
+            font-style: italic;
+            margin-bottom: var(--spacing-xs);
+        }
+        
+        .cv-entry-description {
+            color: var(--color-text);
+            line-height: 1.7;
+        }
+        
+        .cv-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .cv-list li {
+            padding: var(--spacing-xs) 0;
+            padding-left: var(--spacing-md);
+            position: relative;
+        }
+        
+        .cv-list li::before {
+            content: "▸";
+            position: absolute;
+            left: 0;
+            color: var(--color-accent);
+        }
+        
+        .download-btn {
+            background: white;
+            color: var(--color-primary);
+            border: 2px solid white;
+        }
+        
+        .download-btn:hover {
+            background: transparent;
+            color: white;
+        }
+        
+        @media print {
+            .main-nav, .main-footer, .cv-actions {
+                display: none;
+            }
+            
+            .cv-header {
+                background: none;
+                color: black;
+                padding: 0;
+            }
+            
+            .cv-header h1 {
+                color: black;
+            }
+            
+            .cv-section {
+                border: none;
+                page-break-inside: avoid;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .cv-entry-header {
+                flex-direction: column;
+            }
+            
+            .cv-entry-date {
+                order: -1;
+                margin-bottom: var(--spacing-xs);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="main-nav" role="navigation" aria-label="Main navigation">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <a href="index.html" aria-label="Andrew Joung Home">Andrew Joung</a>
+            </div>
+            <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <div class="nav-menu">
+                <a href="index.html">Home</a>
+                <a href="research.html">Research</a>
+                <a href="cv.html" class="active">CV</a>
+                <a href="teaching.html">Teaching</a>
+                <a href="contact.html">Contact</a>
+                <button class="theme-toggle" aria-label="Toggle dark mode">
+                    <svg class="sun-icon" width="20" height="20" fill="currentColor">
+                        <circle cx="10" cy="10" r="5"></circle>
+                        <path d="M10 0v2M10 18v2M0 10h2M18 10h2M2.93 2.93l1.41 1.41M14.66 14.66l1.41 1.41M2.93 17.07l1.41-1.41M14.66 5.34l1.41-1.41"></path>
+                    </svg>
+                    <svg class="moon-icon" width="20" height="20" fill="currentColor">
+                        <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- CV Header -->
+    <header class="cv-header">
+        <div class="container">
+            <h1>Curriculum Vitae</h1>
+            <p>Last updated: October 2025</p>
+            <div class="cv-actions">
+                <a href="#" class="btn download-btn">📄 Download PDF</a>
+                <button onclick="window.print()" class="btn download-btn">🖨️ Print Version</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- CV Content -->
+    <main class="container" style="padding-top: var(--spacing-xl);">
+        
+        <!-- Education Section -->
+        <section class="cv-section">
+            <h2>Education</h2>
+            
+            <div class="cv-entry">
+                <div class="cv-entry-header">
+                    <span class="cv-entry-title">Ph.D. in Economics</span>
+                    <span class="cv-entry-date">2021 - 2026 (Expected)</span>
+                </div>
+                <div class="cv-entry-subtitle">University of Michigan, Ann Arbor</div>
+                <div class="cv-entry-description">
+                    <p>Dissertation: "Essays on Labor Economics and Intergenerational Mobility"</p>
+                    <p>Committee: Professor Jane Smith (Chair), Professor Robert Johnson, Professor Maria Garcia</p>
+                </div>
+            </div>
+            
+            <div class="cv-entry">
+                <div class="cv-entry-header">
+                    <span class="cv-entry-title">M.A. in Economics</span>
+                    <span class="cv-entry-date">2023</span>
+                </div>
+                <div class="cv-entry-subtitle">University of Michigan, Ann Arbor</div>
+            </div>
+            
+            <div class="cv-entry">
+                <div class="cv-entry-header">
+                    <span class="cv-entry-title">B.A. in Economics, Mathematics</span>
+                    <span class="cv-entry-date">2017 - 2021</span>
+                </div>
+                <div class="cv-entry-subtitle">University Name</div>
+                <div class="cv-entry-description">
+                    <p>Magna Cum Laude, Phi Beta Kappa</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Research Interests -->
+        <section class="cv-section">
+            <h2>Research Interests</h2>
+            <p><strong>Primary:</strong> Labor Economics, Applied Microeconomics</p>
+            <p><strong>Secondary:</strong> Public Economics, Urban Economics</p>
+        </section>
+
+        <!-- Teaching Experience -->
+        <section class="cv-section">
+            <h2>Teaching Experience</h2>
+            
+            <div class="cv-entry">
+                <div class="cv-entry-header">
+                    <span class="cv-entry-title">Graduate Student Instructor</span>
+                    <span class="cv-entry-date">Fall 2023 - Present</span>
+                </div>
+                <div class="cv-entry-subtitle">University of Michigan</div>
+                <ul class="cv-list">
+                    <li>ECON 401: Intermediate Microeconomics (Fall 2024, Winter 2025)</li>
+                    <li>ECON 251: Statistics and Econometrics (Fall 2023, Winter 2024)</li>
+                    <li>ECON 101: Principles of Economics (Summer 2023)</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Awards and Honors -->
+        <section class="cv-section">
+            <h2>Awards and Honors</h2>
+            
+            <div class="cv-entry">
+                <div class="cv-entry-header">
+                    <span class="cv-entry-title">Rackham Predoctoral Fellowship</span>
+                    <span class="cv-entry-date">2025</span>
+                </div>
+                <div class="cv-entry-subtitle">University of Michigan</div>
+            </div>
+            
+            <div class="cv-entry">
+                <div class="cv-entry-header">
+                    <span class="cv-entry-title">Outstanding Graduate Student Instructor Award</span>
+                    <span class="cv-entry-date">2024</span>
+                </div>
+                <div class="cv-entry-subtitle">Department of Economics, University of Michigan</div>
+            </div>
+            
+            <div class="cv-entry">
+                <div class="cv-entry-header">
+                    <span class="cv-entry-title">Summer Research Grant</span>
+                    <span class="cv-entry-date">2023, 2024</span>
+                </div>
+                <div class="cv-entry-subtitle">Department of Economics, University of Michigan</div>
+            </div>
+        </section>
+
+        <!-- Presentations -->
+        <section class="cv-section">
+            <h2>Conference Presentations</h2>
+            
+            <div class="cv-entry">
+                <div class="cv-entry-header">
+                    <span class="cv-entry-title">"Intergenerational Effects of Local Labor Market Shocks"</span>
+                    <span class="cv-entry-date">2025</span>
+                </div>
+                <ul class="cv-list">
+                    <li>Midwest Economics Association Annual Meeting, Chicago, IL</li>
+                    <li>Labor and Employment Relations Association Meeting, Virtual</li>
+                    <li>University of Michigan Labor Workshop</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Professional Activities -->
+        <section class="cv-section">
+            <h2>Professional Activities</h2>
+            
+            <div class="cv-entry">
+                <div class="cv-entry-header">
+                    <span class="cv-entry-title">Referee Service</span>
+                </div>
+                <p>Journal of Labor Economics (1), Economic Inquiry (2)</p>
+            </div>
+            
+            <div class="cv-entry">
+                <div class="cv-entry-header">
+                    <span class="cv-entry-title">Conference Organization</span>
+                </div>
+                <p>Co-organizer, Michigan Economics Graduate Student Conference, 2024</p>
+            </div>
+            
+            <div class="cv-entry">
+                <div class="cv-entry-header">
+                    <span class="cv-entry-title">Memberships</span>
+                </div>
+                <p>American Economic Association, Midwest Economics Association</p>
+            </div>
+        </section>
+
+        <!-- Skills -->
+        <section class="cv-section">
+            <h2>Technical Skills</h2>
+            <p><strong>Programming:</strong> Stata, R, Python, MATLAB, Julia</p>
+            <p><strong>Software:</strong> LaTeX, Git, SQL</p>
+            <p><strong>Languages:</strong> English (native), [Other languages if applicable]</p>
+        </section>
+
+        <!-- References -->
+        <section class="cv-section">
+            <h2>References</h2>
+            <p style="margin-bottom: var(--spacing-md);">Available upon request</p>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: var(--spacing-lg);">
+                <div>
+                    <strong>Professor Jane Smith</strong> (Chair)<br>
+                    Department of Economics<br>
+                    University of Michigan<br>
+                    jsmith@umich.edu
+                </div>
+                <div>
+                    <strong>Professor Robert Johnson</strong><br>
+                    Department of Economics<br>
+                    University of Michigan<br>
+                    rjohnson@umich.edu
+                </div>
+                <div>
+                    <strong>Professor Maria Garcia</strong><br>
+                    Department of Economics<br>
+                    University of Michigan<br>
+                    mgarcia@umich.edu
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <p>&copy; 2025 Andrew Joung. All rights reserved.</p>
+                    <p>PhD Candidate, Department of Economics<br>
+                    University of Michigan - Ann Arbor</p>
+                </div>
+                <div class="footer-links">
+                    <a href="mailto:ajoung@umich.edu">Email</a>
+                    <a href="#">LinkedIn</a>
+                    <a href="#">Google Scholar</a>
+                    <a href="#">ORCID</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
