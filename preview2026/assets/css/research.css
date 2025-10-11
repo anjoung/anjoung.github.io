@@ -186,8 +186,8 @@
 
 /* Work in Progress Items - More Compact */
 .research-item {
-    padding: 0.5rem 0;  /* Minimal padding */
-    margin-bottom: 0.5rem;  /* Much reduced spacing between items */
+    padding: 0;  /* Minimal padding */
+    margin-bottom: 0.25rem;  /* Much reduced spacing between items */
     background: var(--color-bg);
     border-radius: 4px;
 }
