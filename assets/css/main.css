@@ -251,8 +251,8 @@ a:hover {
 
 /* Photo Container - Now 440px x 550px (25% taller than square) */
 .hero-photo {
-    width: 440px;    /* Same width */
-    height: 550px;   /* 25% taller than square (440 + 110 = 550) */
+    width: 330px;    /* Same width */
+    height: 412.5px;   /* 25% taller than square (440 + 110 = 550) */
     border-radius: 8px;
     overflow: hidden;
     box-shadow: var(--shadow-md);
