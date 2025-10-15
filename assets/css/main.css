@@ -196,7 +196,7 @@ a:hover {
 /* Hero Section - Update the grid to accommodate square photo */
 .hero-grid {
     display: grid;
-    grid-template-columns: 440px 1fr;  /* Keep same width */
+    grid-template-columns: 330px 1fr;  /* Keep same width */
     gap: var(--spacing-lg);
     align-items: start;
     max-width: 900px;
