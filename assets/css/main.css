@@ -197,7 +197,7 @@ a:hover {
 .hero-grid {
     display: grid;
     grid-template-columns: 440px 1fr;  /* Keep same width */
-    gap: var(--spacing-xl);
+    gap: var(--spacing-lg);
     align-items: start;
     max-width: 900px;
 }
