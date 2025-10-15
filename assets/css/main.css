@@ -199,7 +199,7 @@ a:hover {
     grid-template-columns: 330px 1fr;  /* Keep same width */
     gap: var(--spacing-lg);
     align-items: start;
-    max-width: 900px;
+    max-width: 1000px;
 }
 
 
