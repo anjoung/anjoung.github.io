@@ -1,0 +1,9 @@
+# robots.txt for andrewjoung.com
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://andrewjoung.com/sitemap.xml
+
+# Disallow preview/staging directories
+Disallow: /preview2026/
