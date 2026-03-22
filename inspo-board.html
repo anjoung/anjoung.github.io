@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Redesign — Inspo Board</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            background: #faf9f7;
+            color: #2c2c2c;
+            line-height: 1.6;
+            padding: 2rem 1.5rem;
+            max-width: 960px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: 2rem;
+            font-weight: 400;
+            letter-spacing: -0.02em;
+            margin-bottom: 0.25rem;
+            color: #1a1a1a;
+        }
+
+        .subtitle {
+            font-size: 0.95rem;
+            color: #777;
+            margin-bottom: 2.5rem;
+            font-style: italic;
+        }
+
+        .design-brief {
+            background: #f0eeeb;
+            border-radius: 8px;
+            padding: 1.5rem 1.75rem;
+            margin-bottom: 3rem;
+            font-size: 0.92rem;
+            line-height: 1.7;
+        }
+
+        .design-brief strong {
+            display: block;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: #999;
+            margin-bottom: 0.5rem;
+            font-family: system-ui, -apple-system, sans-serif;
+        }
+
+        .section-title {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: #aaa;
+            font-family: system-ui, -apple-system, sans-serif;
+            font-weight: 600;
+            margin-bottom: 1.25rem;
+            margin-top: 0.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid #e5e3e0;
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.25rem;
+            margin-bottom: 3rem;
+        }
+
+        .card {
+            background: #fff;
+            border: 1px solid #e8e6e3;
+            border-radius: 8px;
+            padding: 1.4rem 1.5rem;
+            transition: box-shadow 0.2s ease, border-color 0.2s ease;
+        }
+
+        .card:hover {
+            box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+            border-color: #d0cec9;
+        }
+
+        .card-name {
+            font-size: 1.05rem;
+            font-weight: 600;
+            margin-bottom: 0.15rem;
+        }
+
+        .card-name a {
+            color: #1a1a1a;
+            text-decoration: none;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .card-name a:hover {
+            border-bottom-color: #1a1a1a;
+        }
+
+        .card-role {
+            font-size: 0.8rem;
+            color: #999;
+            font-family: system-ui, -apple-system, sans-serif;
+            margin-bottom: 0.75rem;
+        }
+
+        .card-notes {
+            font-size: 0.88rem;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .tag {
+            display: inline-block;
+            font-size: 0.7rem;
+            font-family: system-ui, -apple-system, sans-serif;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            padding: 0.2rem 0.5rem;
+            border-radius: 3px;
+            margin-top: 0.6rem;
+            margin-right: 0.3rem;
+        }
+
+        .tag-typography { background: #ede8f5; color: #6b5b95; }
+        .tag-layout { background: #e3f0e8; color: #4a7c59; }
+        .tag-color { background: #fce8db; color: #b36b3f; }
+        .tag-whitespace { background: #e8eff5; color: #4a6b8c; }
+        .tag-interactive { background: #f5e8e8; color: #8c4a4a; }
+        .tag-warmth { background: #f5f0e3; color: #8c7a4a; }
+        .tag-navigation { background: #e8f2f5; color: #4a7c8c; }
+
+        .reference-sites {
+            background: #eae7e2;
+            border-radius: 8px;
+            padding: 1.4rem 1.75rem;
+            margin-bottom: 3rem;
+        }
+
+        .reference-sites h3 {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: #999;
+            font-family: system-ui, -apple-system, sans-serif;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+        }
+
+        .ref-item {
+            margin-bottom: 0.75rem;
+        }
+
+        .ref-item a {
+            color: #1a1a1a;
+            font-weight: 600;
+            text-decoration: none;
+            border-bottom: 1px solid #bbb;
+        }
+
+        .ref-item p {
+            font-size: 0.88rem;
+            color: #666;
+            margin-top: 0.2rem;
+        }
+
+        footer {
+            margin-top: 3rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #e5e3e0;
+            font-size: 0.82rem;
+            color: #aaa;
+            font-family: system-ui, -apple-system, sans-serif;
+        }
+
+        @media (max-width: 640px) {
+            .card-grid { grid-template-columns: 1fr; }
+            body { padding: 1.25rem 1rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Website Redesign — Inspo Board</h1>
+    <p class="subtitle">Curated references for andrewjoung.com refresh</p>
+
+    <div class="design-brief">
+        <strong>Design Direction</strong>
+        Post-job-market professional rebrand. Blend of minimal/clean and warm/approachable.
+        The current site's structure is fine but the styling feels dated — typography, color,
+        and spacing need modernizing. Want something that reads as "established researcher"
+        rather than "job market candidate." Open to color but wants to see examples first.
+    </div>
+
+    <div class="reference-sites">
+        <h3>Your Starting References</h3>
+        <div class="ref-item">
+            <a href="https://paulgp.com/" target="_blank">Paul Goldsmith-Pinkham</a>
+            <p>Associate Professor of Finance, Yale. Clean layout, strong typography hierarchy, blog integration ("A Causal Affair"). A benchmark for polished-but-approachable in econ.</p>
+        </div>
+        <div class="ref-item">
+            <a href="https://peter-mccrory.github.io/" target="_blank">Peter B. McCrory</a>
+            <p>Economist, Anthropic. Modern single-page feel, generous whitespace, clean sans-serif typography. Shows that GitHub Pages can look sharp with good design choices.</p>
+        </div>
+    </div>
+
+    <!-- PASS 1 -->
+    <div class="section-title">Pass 1 — Economist &amp; Social Science Faculty Sites</div>
+    <div class="card-grid">
+
+        <div class="card">
+            <div class="card-name"><a href="https://rajchetty.com/" target="_blank">Raj Chetty</a></div>
+            <div class="card-role">Professor of Economics, Harvard</div>
+            <div class="card-notes">
+                Clean, well-organized site with clear section hierarchy. Publications page groups papers with descriptions and context. Shows how a senior researcher structures a large body of work without it feeling overwhelming.
+            </div>
+            <span class="tag tag-layout">Layout</span>
+            <span class="tag tag-navigation">Navigation</span>
+        </div>
+
+        <div class="card">
+            <div class="card-name"><a href="https://dell-research-harvard.github.io/" target="_blank">Melissa Dell</a></div>
+            <div class="card-role">Professor of Economics, Harvard</div>
+            <div class="card-notes">
+                GitHub Pages site that's minimal and fast-loading. Research-forward design — the work is the centerpiece. Good example of how restraint in design can feel intentional and confident rather than lazy.
+            </div>
+            <span class="tag tag-whitespace">Whitespace</span>
+            <span class="tag tag-layout">Layout</span>
+        </div>
+
+        <div class="card">
+            <div class="card-name"><a href="https://rossihansberg.economics.uchicago.edu/" target="_blank">Esteban Rossi-Hansberg</a></div>
+            <div class="card-role">Professor of Economics, UChicago</div>
+            <div class="card-notes">
+                Multi-section site (research by topic & chronology, columns, data, teaching). Demonstrates how to organize a deep body of work across multiple dimensions. Navigation structure worth studying.
+            </div>
+            <span class="tag tag-navigation">Navigation</span>
+            <span class="tag tag-layout">Layout</span>
+        </div>
+
+        <div class="card">
+            <div class="card-name"><a href="https://sompks4.github.io/" target="_blank">Peter K. Schott</a></div>
+            <div class="card-role">Professor of Economics, Yale SOM</div>
+            <div class="card-notes">
+                Clean GitHub Pages academic site. Data-forward with direct links to datasets. Shows how to make research outputs immediately accessible — relevant as your work grows post-PhD.
+            </div>
+            <span class="tag tag-layout">Layout</span>
+            <span class="tag tag-whitespace">Whitespace</span>
+        </div>
+
+        <div class="card">
+            <div class="card-name"><a href="https://charlyporcher.github.io/" target="_blank">Charly Porcher</a></div>
+            <div class="card-role">Economist (spatial/trade)</div>
+            <div class="card-notes">
+                Modern Hugo Academic site, but customized well beyond defaults. Cleaner than the typical job-market template. Good example of what your stack (GitHub Pages) can look like with more design attention.
+            </div>
+            <span class="tag tag-typography">Typography</span>
+            <span class="tag tag-whitespace">Whitespace</span>
+        </div>
+
+        <div class="card">
+            <div class="card-name"><a href="https://hollina.github.io/make-a-job-market-website.html" target="_blank">Alex Hollingsworth (Guide)</a></div>
+            <div class="card-role">How-to for econ job market sites</div>
+            <div class="card-notes">
+                Not an inspo site per se, but a useful technical reference. Walks through Hugo Academic setup with modifications for a cleaner look. Helpful if you decide to rebuild on Hugo.
+            </div>
+            <span class="tag tag-layout">Layout</span>
+        </div>
+
+    </div>
+
+    <!-- PASS 2 -->
+    <div class="section-title">Pass 2 — Adjacent Academic Fields</div>
+    <div class="card-grid">
+
+        <div class="card">
+            <div class="card-name"><a href="https://www.andrewheiss.com/" target="_blank">Andrew Heiss</a></div>
+            <div class="card-role">Asst. Professor, Public Management — Georgia State</div>
+            <div class="card-notes">
+                One of the best-designed academic sites in social science. Warm color palette, excellent typography (serif headings, clean body text), blog integration. Feels personal and professional simultaneously. Strong model for post-market identity.
+            </div>
+            <span class="tag tag-typography">Typography</span>
+            <span class="tag tag-color">Color</span>
+            <span class="tag tag-warmth">Warmth</span>
+        </div>
+
+        <div class="card">
+            <div class="card-name"><a href="https://kieranhealy.org/" target="_blank">Kieran Healy</a></div>
+            <div class="card-role">Professor of Sociology, Duke</div>
+            <div class="card-notes">
+                Elegant, restrained design. Strong typographic hierarchy with serif fonts. Integrates blog, publications, and data visualization work. A masterclass in making a content-rich academic site feel effortlessly clean.
+            </div>
+            <span class="tag tag-typography">Typography</span>
+            <span class="tag tag-whitespace">Whitespace</span>
+        </div>
+
+        <div class="card">
+            <div class="card-name"><a href="https://www.patrick-manser.com/" target="_blank">Patrick Manser</a></div>
+            <div class="card-role">Postdoctoral Researcher, Karolinska Institutet</div>
+            <div class="card-notes">
+                Winner of 2025 Best Academic Portfolio Website. Extensive but well-organized — includes research metrics, media, grants. Shows how to be comprehensive without being cluttered. Built on Owlstown.
+            </div>
+            <span class="tag tag-layout">Layout</span>
+            <span class="tag tag-navigation">Navigation</span>
+        </div>
+
+        <div class="card">
+            <div class="card-name"><a href="https://cecibaldoni.github.io/" target="_blank">Cecilia Baldoni</a></div>
+            <div class="card-role">Postdoc, Max Planck Institute</div>
+            <div class="card-notes">
+                Winner of 2025 Best Interactive Academic Website. Features interactive maps and project exploration. More ambitious than you probably need, but demonstrates how academic sites can be engaging and research-forward.
+            </div>
+            <span class="tag tag-interactive">Interactive</span>
+            <span class="tag tag-layout">Layout</span>
+        </div>
+
+        <div class="card">
+            <div class="card-name"><a href="https://grantmcdermott.com/" target="_blank">Grant McDermott</a></div>
+            <div class="card-role">Senior Economist, Amazon / Adj. Professor, Oregon</div>
+            <div class="card-notes">
+                Clean Hugo-based site with good use of subtle color accents. Blog and research coexist naturally. Good example of an academic-turned-industry researcher maintaining a scholarly web presence.
+            </div>
+            <span class="tag tag-color">Color</span>
+            <span class="tag tag-layout">Layout</span>
+        </div>
+
+    </div>
+
+    <!-- PASS 3 -->
+    <div class="section-title">Pass 3 — Design Inspiration (Non-Academic)</div>
+    <div class="card-grid">
+
+        <div class="card">
+            <div class="card-name"><a href="https://minimal.gallery/" target="_blank">Minimal Gallery</a></div>
+            <div class="card-role">Curated design inspiration</div>
+            <div class="card-notes">
+                Daily-updated gallery of minimal website designs. Filter for personal/portfolio sites. Great for browsing color palettes, typography pairings, and spacing patterns. Visit and scroll — the curation itself is excellent.
+            </div>
+            <span class="tag tag-typography">Typography</span>
+            <span class="tag tag-whitespace">Whitespace</span>
+        </div>
+
+        <div class="card">
+            <div class="card-name"><a href="https://www.lapa.ninja/collection/serif-fonts/" target="_blank">Lapa Ninja — Serif Fonts</a></div>
+            <div class="card-role">Landing page gallery, filtered by serif typography</div>
+            <div class="card-notes">
+                285+ examples of sites using serif fonts. Since your taste leans toward warmth with clean structure, serif headings with sans-serif body text is a strong direction. Browse this for font pairing ideas.
+            </div>
+            <span class="tag tag-typography">Typography</span>
+            <span class="tag tag-warmth">Warmth</span>
+        </div>
+
+        <div class="card">
+            <div class="card-name"><a href="https://www.awwwards.com/websites/minimal/" target="_blank">Awwwards — Minimal Sites</a></div>
+            <div class="card-role">Award-winning minimal web design</div>
+            <div class="card-notes">
+                Curated collection of award-winning minimal websites. More aspirational than directly applicable, but useful for seeing what "polished" really looks like. Pay attention to hover states, transitions, and micro-interactions.
+            </div>
+            <span class="tag tag-whitespace">Whitespace</span>
+            <span class="tag tag-interactive">Interactive</span>
+        </div>
+
+        <div class="card">
+            <div class="card-name"><a href="https://www.framer.com/gallery/styles/minimal" target="_blank">Framer Gallery — Minimal</a></div>
+            <div class="card-role">Template gallery from Framer</div>
+            <div class="card-notes">
+                Real templates you could actually use (Framer is a no-code site builder). Even if you stick with GitHub Pages, the design patterns here — card layouts, spacing rhythms, font scales — are directly translatable.
+            </div>
+            <span class="tag tag-layout">Layout</span>
+            <span class="tag tag-typography">Typography</span>
+        </div>
+
+        <div class="card">
+            <div class="card-name"><a href="https://www.sitebuilderreport.com/inspiration/clean-websites" target="_blank">SiteBuilderReport — Clean Websites</a></div>
+            <div class="card-role">Curated clean design examples</div>
+            <div class="card-notes">
+                20+ hand-picked examples of clean website design. Good middle ground between "design gallery" and practical templates. Useful for seeing how non-designers achieve a polished look.
+            </div>
+            <span class="tag tag-whitespace">Whitespace</span>
+            <span class="tag tag-color">Color</span>
+        </div>
+
+    </div>
+
+    <!-- DESIGN ELEMENTS -->
+    <div class="section-title">Design Elements to Watch For</div>
+    <div class="design-brief">
+        As you browse these sites, pay attention to these specific elements that will matter most for your redesign:
+        <br><br>
+        <strong style="display:inline; font-size: inherit; text-transform: none; letter-spacing: normal; color: #2c2c2c;">Typography pairing</strong> — Most sites you liked use a serif for headings + sans-serif for body, or vice versa. Note which combos feel right.
+        <br><br>
+        <strong style="display:inline; font-size: inherit; text-transform: none; letter-spacing: normal; color: #2c2c2c;">Accent color</strong> — Even "minimal" sites usually have one accent color for links and highlights. Screenshot any color choices that appeal to you.
+        <br><br>
+        <strong style="display:inline; font-size: inherit; text-transform: none; letter-spacing: normal; color: #2c2c2c;">Photo treatment</strong> — Circular crop? Rectangular? Full-bleed? Subtle border or shadow? Small but important.
+        <br><br>
+        <strong style="display:inline; font-size: inherit; text-transform: none; letter-spacing: normal; color: #2c2c2c;">Research presentation</strong> — How do papers get listed? Abstracts inline or expandable? Grouped by topic or chronological? Links to PDFs, slides, data?
+        <br><br>
+        <strong style="display:inline; font-size: inherit; text-transform: none; letter-spacing: normal; color: #2c2c2c;">Footer & nav</strong> — Minimal top nav with anchor links? Sidebar? How much navigation is enough as your site grows?
+    </div>
+
+    <footer>
+        Built March 2026 as a working document. Not intended for public viewing.
+        — Andrew Joung website redesign project
+    </footer>
+
+</body>
+</html>

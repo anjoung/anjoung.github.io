@@ -415,12 +415,14 @@ a:hover {
         width: 100%;
         height: auto;
         padding: var(--spacing-sm) 0;
+        min-height: 44px;
         border-bottom: 1px solid var(--color-border);
         border-left: none;
     }
-    
+
     .nav-menu.active {
         left: 0;
+        overflow-y: auto;
     }
     
     /* Hero */
@@ -441,6 +443,28 @@ a:hover {
         flex-direction: column;
         text-align: center;
     }
+}
+
+/* ========================================
+   Print Styles
+   ======================================== */
+/* Abstract toggle tap targets */
+.abstract-toggle {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    padding: 0.5rem 0;
+    background: none;
+    border: none;
+    color: var(--color-primary);
+    cursor: pointer;
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+.abstract-toggle:hover {
+    text-decoration: underline;
 }
 
 /* ========================================

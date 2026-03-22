@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Andrew Joung — Economist at Tools for Humanity</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #faf8f5;
+            color: #3a3a3a;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            font-size: 1rem;
+            line-height: 1.7;
+        }
+
+        a {
+            color: #b36b3f;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: 1fr 250px;
+            max-width: 950px;
+            margin: 0 auto;
+            gap: 2.5rem;
+            padding: 3rem 2rem;
+            min-height: 100vh;
+        }
+
+        /* MAIN CONTENT */
+        .main-content {
+            order: -1;
+        }
+
+        .header {
+            margin-bottom: 2.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 2px solid #b36b3f;
+        }
+
+        .name {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: #2a2a2a;
+            letter-spacing: -0.01em;
+        }
+
+        .subtitle {
+            color: #6d6d6d;
+            font-size: 1.1rem;
+            font-weight: 400;
+            letter-spacing: 0.02em;
+        }
+
+        .section {
+            margin-bottom: 3rem;
+            padding-bottom: 3rem;
+            border-bottom: 1px solid #e8e3dd;
+        }
+
+        .section:last-of-type {
+            border-bottom: none;
+            margin-bottom: 1rem;
+            padding-bottom: 0;
+        }
+
+        .section-label {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: #a68468;
+            margin-bottom: 1.5rem;
+            display: block;
+            transition: color 0.2s ease;
+        }
+
+        .section:hover .section-label {
+            color: #b36b3f;
+        }
+
+        .section-content {
+            line-height: 1.75;
+        }
+
+        .section-content p {
+            margin-bottom: 1.25rem;
+        }
+
+        .section-content p:last-child {
+            margin-bottom: 0;
+        }
+
+        .paper-list {
+            list-style: none;
+            margin-top: 1.25rem;
+        }
+
+        .paper-item {
+            margin-bottom: 1.75rem;
+            padding-left: 0;
+        }
+
+        .paper-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .paper-title {
+            font-weight: 500;
+            margin-bottom: 0.4rem;
+        }
+
+        .paper-meta {
+            font-size: 0.9rem;
+            color: #7d7d7d;
+            margin-bottom: 0.5rem;
+        }
+
+        .paper-links {
+            font-size: 0.9rem;
+        }
+
+        .paper-links a {
+            margin-right: 1.5rem;
+            font-weight: 500;
+            padding-bottom: 2px;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.2s ease;
+        }
+
+        .paper-links a:hover {
+            border-bottom-color: #b36b3f;
+            text-decoration: none;
+        }
+
+        .footer {
+            font-size: 0.85rem;
+            color: #9a8b7f;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 2px solid #b36b3f;
+            opacity: 0.6;
+            transition: opacity 0.3s ease;
+        }
+
+        .footer:hover {
+            opacity: 1;
+        }
+
+        /* SIDEBAR */
+        .sidebar {
+            background-color: #f8ede5;
+            padding: 2.5rem 1.75rem;
+            border-radius: 6px;
+            position: sticky;
+            top: 2rem;
+            height: fit-content;
+            box-shadow: inset 0 0 16px rgba(179, 107, 63, 0.05);
+        }
+
+        .nav-menu {
+            margin-bottom: 2.5rem;
+        }
+
+        .nav-menu a {
+            display: block;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 1.2rem;
+            color: #3a3a3a;
+        }
+
+        .nav-menu a:last-child {
+            margin-bottom: 0;
+        }
+
+        .nav-menu a:hover {
+            color: #b36b3f;
+            text-decoration: none;
+            letter-spacing: 0.12em;
+            transition: all 0.3s ease;
+        }
+
+        .photo-container {
+            margin-bottom: 2.5rem;
+        }
+
+        .photo {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 8px solid #faf8f5;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+            display: block;
+            margin: 0 auto;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .photo:hover {
+            transform: scale(1.03);
+            box-shadow: 0 12px 32px rgba(179, 107, 63, 0.15);
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid #e8e3dd;
+        }
+
+        .social-links a {
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: #8b7d72;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: #b36b3f;
+            text-decoration: none;
+            letter-spacing: 0.12em;
+        }
+
+        /* TABLET RESPONSIVE */
+        @media (max-width: 1024px) and (min-width: 769px) {
+            .container {
+                gap: 2rem;
+            }
+        }
+
+        /* MOBILE RESPONSIVE */
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                padding: 2rem 1.5rem;
+            }
+
+            .main-content {
+                order: 0;
+            }
+
+            .sidebar {
+                position: relative;
+                top: 0;
+                background-color: transparent;
+                padding: 0 0 2.5rem 0;
+                border-bottom: 2px solid #b36b3f;
+                display: flex;
+                align-items: flex-start;
+                gap: 2rem;
+                box-shadow: none;
+            }
+
+            .header {
+                border-bottom: none;
+                padding-bottom: 0;
+            }
+
+            .nav-menu {
+                display: flex;
+                gap: 1.5rem;
+                margin-bottom: 0;
+                flex-wrap: wrap;
+                order: 2;
+                width: 100%;
+            }
+
+            .nav-menu a {
+                margin-bottom: 0;
+                font-size: 0.75rem;
+            }
+
+            .photo-container {
+                margin-bottom: 0;
+                order: 1;
+                flex-shrink: 0;
+            }
+
+            .photo {
+                width: 140px;
+                height: 140px;
+            }
+
+            .social-links {
+                display: none;
+            }
+
+            .name {
+                font-size: 1.75rem;
+            }
+
+            .section {
+                margin-bottom: 2.5rem;
+                padding-bottom: 2.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 1.5rem 1rem;
+            }
+
+            .sidebar {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .nav-menu {
+                justify-content: center;
+                order: 0;
+            }
+
+            .photo-container {
+                order: 1;
+            }
+
+            .name {
+                font-size: 1.5rem;
+            }
+
+            .section-label {
+                font-size: 0.75rem;
+            }
+
+            .section-content {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- MAIN CONTENT -->
+        <main class="main-content">
+            <!-- HEADER -->
+            <div class="header">
+                <h1 class="name">Andrew Joung</h1>
+                <p class="subtitle">Economist at Tools for Humanity</p>
+            </div>
+
+            <!-- ABOUT SECTION -->
+            <section class="section">
+                <span class="section-label">About</span>
+                <div class="section-content">
+                    <p>Welcome! I'm an economist at Tools for Humanity, where I work on questions at the intersection of labor economics, technology, and economic opportunity. My research uses quasi-experimental methods and large-scale administrative data to study the intergenerational transmission of economic shocks and regional labor markets.</p>
+                    <p>I received my PhD in Economics from the University of Michigan and my BA from Vassar College. Previously, I worked at The Wharton School supporting behavioral experiments and RCTs at Fortune 500 companies. I'm based in San Francisco — always happy to connect.</p>
+                </div>
+            </section>
+
+            <!-- RESEARCH SECTION -->
+            <section class="section">
+                <span class="section-label">Research</span>
+                <div class="section-content">
+                    <p>My research is listed on my <a href="#research">research page</a>. Here are a few highlighted papers:</p>
+                    <ul class="paper-list">
+                        <li class="paper-item">
+                            <div class="paper-title">The Intergenerational Effects of Labor Union Decline</div>
+                            <div class="paper-meta">Job Market Paper</div>
+                            <div class="paper-links">
+                                <a href="#abstract">Abstract</a>
+                                <a href="#pdf">PDF</a>
+                            </div>
+                        </li>
+                        <li class="paper-item">
+                            <div class="paper-title">The Future of Self-Employment</div>
+                            <div class="paper-meta">NBER CRIW</div>
+                            <div class="paper-links">
+                                <a href="#link">Link</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- CV SECTION -->
+            <section class="section">
+                <span class="section-label">CV</span>
+                <div class="section-content">
+                    <p>My CV is available <a href="#cv">here</a>.</p>
+                </div>
+            </section>
+
+            <!-- WRITING SECTION -->
+            <section class="section">
+                <span class="section-label">Writing</span>
+                <div class="section-content">
+                    <p>I write about the intersection of labor economics, AI adoption, and economic opportunity. Recent essays explore the future of work, regional inequality, and what policy can (and cannot) do. Follow my <a href="https://twitter.com">X</a> for shorter takes.</p>
+                </div>
+            </section>
+
+            <!-- CONTACT SECTION -->
+            <section class="section">
+                <span class="section-label">Contact</span>
+                <div class="section-content">
+                    <p>Email: <a href="mailto:ajoung@umich.edu">ajoung@umich.edu</a></p>
+                </div>
+            </section>
+
+            <!-- FOOTER -->
+            <footer class="footer">
+                <p>&copy; 2026 Andrew Joung. Last updated March 2026.</p>
+            </footer>
+        </main>
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+            <nav class="nav-menu">
+                <a href="#home">Home</a>
+                <a href="#research">Research</a>
+                <a href="#cv">CV</a>
+                <a href="#writing">Writing</a>
+            </nav>
+
+            <div class="photo-container">
+                <img src="image/IMG_4509.jpg" alt="Andrew Joung" class="photo">
+            </div>
+
+            <div class="social-links">
+                <a href="https://linkedin.com" title="LinkedIn">LinkedIn</a>
+                <a href="https://scholar.google.com" title="Google Scholar">Scholar</a>
+                <a href="https://github.com" title="GitHub">GitHub</a>
+                <a href="mailto:ajoung@umich.edu" title="Email">Email</a>
+            </div>
+        </aside>
+    </div>
+</body>
+</html>
