@@ -2,20 +2,21 @@
    CSS Variables & Root Settings
    ======================================== */
 :root {
-    /* Color Palette - Google Style */
-    --color-text: #333333;
-    --color-text-secondary: #5f6368;
-    --color-primary: #1a73e8;  /* Google Blue */
-    --color-primary-dark: #1557b0;
-    --color-accent: #e8f0fe;   /* Light blue background */
-    --color-link: #1a73e8;
-    --color-bg: #ffffff;
-    --color-bg-light: #f8f9fa;  /* Light gray background */
-    --color-border: #dadce0;
-    
+    /* Color Palette - Ivory / Monochrome (redesign) */
+    --color-text: #2b2825;            /* near-black charcoal */
+    --color-text-secondary: #6b6358;  /* warm gray */
+    --color-primary: #2b2825;         /* accents now charcoal (was blue) */
+    --color-primary-dark: #000000;    /* hover */
+    --color-accent: #ece4d2;          /* subtle warm inset (was light blue) */
+    --color-link: #2b2825;            /* links charcoal */
+    --color-bg: #FBF8F0;              /* IVORY - single flat surface */
+    --color-bg-light: #FBF8F0;        /* same as bg => seamless, no panels */
+    --color-inset: #F1EBDA;           /* gentle tone for abstract boxes/chips */
+    --color-border: #e2dac8;          /* soft warm divider where truly needed */
+
     /* Typography */
     --font-sans: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', Oxygen, Ubuntu, sans-serif;
-    
+
     /* Spacing */
     --spacing-xs: 0.5rem;
     --spacing-sm: 1rem;
@@ -23,19 +24,19 @@
     --spacing-lg: 2rem;
     --spacing-xl: 3rem;
     --spacing-xxl: 4rem;
-    
+
     /* Layout */
     --max-width: 1100px;
     --content-width: 800px;
-    
+
     /* Transitions */
     --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     --transition-fast: all 0.15s ease;
-    
-    /* Shadows */
-    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
-    --shadow-md: 0 2px 4px rgba(0, 0, 0, 0.1);
-    --shadow-lg: 0 4px 8px rgba(0, 0, 0, 0.15);
+
+    /* Shadows (kept subtle, used sparingly) */
+    --shadow-sm: 0 1px 2px rgba(60, 50, 30, 0.06);
+    --shadow-md: 0 2px 6px rgba(60, 50, 30, 0.10);
+    --shadow-lg: 0 4px 10px rgba(60, 50, 30, 0.14);
 }
 
 /* ========================================
@@ -56,7 +57,7 @@ html {
 body {
     font-family: var(--font-sans);
     color: var(--color-text);
-    background-color: var(--color-bg-light);  /* Light background for body */
+    background-color: var(--color-bg);  /* ivory everywhere */
     line-height: 1.6;
     font-weight: 400;
     min-height: 100vh;
@@ -87,22 +88,28 @@ p {
     line-height: 1.7;
 }
 
+/* Links: no color cue anymore, so keep them underlined for affordance */
 a {
     color: var(--color-link);
-    text-decoration: none;
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 2px;
+    text-decoration-color: rgba(43, 40, 37, 0.35);
     transition: var(--transition-fast);
 }
 
 a:hover {
-    text-decoration: underline;
+    text-decoration-color: currentColor;
+    color: var(--color-primary-dark);
 }
 
 /* ========================================
-   Navigation - No Dark Mode Toggle
+   Navigation - seamless, borderless, ivory
    ======================================== */
 .main-nav {
-    background: var(--color-bg);  /* White background */
-    box-shadow: var(--shadow-sm);
+    background: var(--color-bg);   /* same ivory as body */
+    box-shadow: none;              /* no seam */
+    border: none;
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -114,8 +121,11 @@ a:hover {
     padding: 0 var(--spacing-md);
     height: 64px;
     display: flex;
-    justify-content: space-between;
     align-items: center;
+}
+
+.nav-brand {
+    margin-right: auto;  /* push tabs + icons to the far right */
 }
 
 .nav-brand a {
@@ -128,6 +138,13 @@ a:hover {
 
 .nav-brand a:hover {
     text-decoration: none;
+}
+
+/* Right-side cluster: tabs then social icons */
+.nav-cluster {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
 }
 
 .nav-menu {
@@ -152,13 +169,41 @@ a:hover {
 }
 
 .nav-menu a:hover {
-    background: var(--color-bg-light);
+    color: var(--color-text);
     text-decoration: none;
 }
 
 .nav-menu a.active {
-    color: var(--color-primary);
-    border-bottom-color: var(--color-primary);
+    color: var(--color-text);
+    border-bottom-color: var(--color-text);  /* charcoal underline, not blue */
+}
+
+/* Social icons in header (replaces footer links) */
+.nav-social {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+}
+
+.nav-social a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-text-secondary);
+    text-decoration: none;
+    line-height: 0;
+    transition: var(--transition-fast);
+}
+
+.nav-social a:hover {
+    color: var(--color-text);
+}
+
+.nav-social svg {
+    width: 20px;
+    height: 20px;
+    fill: currentColor;
+    display: block;
 }
 
 .nav-toggle {
@@ -168,6 +213,7 @@ a:hover {
     border: none;
     cursor: pointer;
     padding: 5px;
+    margin-left: 0.5rem;
 }
 
 .nav-toggle span {
@@ -182,7 +228,7 @@ a:hover {
    Simple Hero Section (Photo on Left)
    ======================================== */
 .hero-simple {
-    background: var(--color-bg-light);
+    background: var(--color-bg);
     padding: var(--spacing-xxl) 0;
     flex: 1;
 }
@@ -193,15 +239,13 @@ a:hover {
     padding: 0 var(--spacing-md);
 }
 
-/* Hero Section - Update the grid to accommodate square photo */
 .hero-grid {
     display: grid;
-    grid-template-columns: 330px 1fr;  /* Keep same width */
+    grid-template-columns: 330px 1fr;
     gap: var(--spacing-lg);
     align-items: start;
     max-width: 1000px;
 }
-
 
 .hero-name {
     font-size: 2.5rem;
@@ -212,7 +256,7 @@ a:hover {
 
 .hero-title {
     font-size: 1.25rem;
-    color: var(--color-primary);
+    color: var(--color-text);   /* was blue */
     margin-bottom: var(--spacing-xs);
     font-weight: 400;
 }
@@ -232,31 +276,29 @@ a:hover {
     color: var(--color-text);
 }
 
-/* Email outside the bubble */
 .hero-contact {
     margin: var(--spacing-md) 0;
     color: var(--color-text-secondary);
 }
 
-/* Job Market Notice - Google Style Alert */
 .job-market-notice {
-    background: var(--color-accent);  /* Light blue background */
+    background: var(--color-inset);
     border-radius: 8px;
     padding: var(--spacing-sm) var(--spacing-md);
     margin: var(--spacing-md) 0;
     font-size: 1rem;
-    color: #1967d2;  /* Darker blue text */
+    color: var(--color-text);
     font-weight: 500;
 }
 
-/* Photo Container - Now 440px x 550px (25% taller than square) */
+/* Photo */
 .hero-photo {
-    width: 330px;    /* Same width */
-    height: 412.5px;   /* 25% taller than square (440 + 110 = 550) */
+    width: 330px;
+    height: 412.5px;
     border-radius: 8px;
     overflow: hidden;
     box-shadow: var(--shadow-md);
-    background: white;
+    background: var(--color-bg);
 }
 
 .hero-photo img {
@@ -265,23 +307,18 @@ a:hover {
     object-fit: cover;
 }
 
-/* Mobile Responsive - Update for taller photo */
 @media (max-width: 768px) {
-    /* ... other mobile styles ... */
-    
-    /* Hero photo on mobile - scale down proportionally */
     .hero-photo {
-        width: 320px;    /* Smaller on mobile */
-        height: 400px;   /* Maintains 4:5 ratio */
+        width: 320px;
+        height: 400px;
         margin: 0 auto;
     }
 }
 
-/* For very small screens */
 @media (max-width: 480px) {
     .hero-photo {
-        width: 280px;    /* Even smaller for tiny screens */
-        height: 350px;   /* Still maintains 4:5 ratio */
+        width: 280px;
+        height: 350px;
     }
 }
 
@@ -300,11 +337,12 @@ a:hover {
     font-size: 0.875rem;
     text-transform: uppercase;
     letter-spacing: 0.5px;
+    text-decoration: none;
 }
 
 .btn-primary {
     background: var(--color-primary);
-    color: white;
+    color: var(--color-bg);
 }
 
 .btn-primary:hover {
@@ -314,52 +352,14 @@ a:hover {
 }
 
 .btn-secondary {
-    background: var(--color-bg);
+    background: transparent;
     color: var(--color-primary);
     border: 1px solid var(--color-border);
 }
 
 .btn-secondary:hover {
-    background: var(--color-bg-light);
+    background: var(--color-inset);
     text-decoration: none;
-}
-
-/* ========================================
-   Minimal Footer (50% smaller)
-   ======================================== */
-.main-footer-minimal {
-    background: var(--color-bg);
-    border-top: 1px solid var(--color-border);
-    padding: var(--spacing-md) 0;
-    margin-top: auto;
-}
-
-.footer-content-minimal {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: var(--spacing-sm);
-}
-
-.footer-content-minimal p {
-    color: var(--color-text-secondary);
-    margin: 0;
-    font-size: 0.875rem;
-}
-
-.footer-links-minimal {
-    display: flex;
-    gap: var(--spacing-md);
-}
-
-.footer-links-minimal a {
-    color: var(--color-primary);
-    font-size: 0.875rem;
-}
-
-.footer-links-minimal a:hover {
-    text-decoration: underline;
 }
 
 /* ========================================
@@ -386,17 +386,20 @@ a:hover {
    Mobile Responsive
    ======================================== */
 @media (max-width: 768px) {
-    /* Typography Scale */
     h1 { font-size: 2rem; }
     h2 { font-size: 1.5rem; }
     .hero-name { font-size: 2rem; }
     .hero-title { font-size: 1.1rem; }
-    
-    /* Navigation */
+
     .nav-toggle {
         display: flex;
     }
-    
+
+    /* tabs slide in; social icons stay visible in header */
+    .nav-cluster {
+        gap: 0.75rem;
+    }
+
     .nav-menu {
         position: fixed;
         top: 64px;
@@ -408,9 +411,8 @@ a:hover {
         padding: var(--spacing-lg);
         gap: 0;
         transition: var(--transition);
-        box-shadow: var(--shadow-lg);
     }
-    
+
     .nav-menu a {
         width: 100%;
         height: auto;
@@ -424,31 +426,22 @@ a:hover {
         left: 0;
         overflow-y: auto;
     }
-    
-    /* Hero */
+
     .hero-grid {
         grid-template-columns: 1fr;
         text-align: center;
     }
-    
-    /* Hero photo mobile - maintains 4:5 ratio */
+
     .hero-photo {
         width: 240px;
         height: 300px;
         margin: 0 auto;
     }
-    
-    /* Footer */
-    .footer-content-minimal {
-        flex-direction: column;
-        text-align: center;
-    }
 }
 
 /* ========================================
-   Print Styles
+   Abstract toggle tap targets
    ======================================== */
-/* Abstract toggle tap targets */
 .abstract-toggle {
     min-height: 44px;
     display: inline-flex;
@@ -471,24 +464,24 @@ a:hover {
    Print Styles
    ======================================== */
 @media print {
-    .main-nav, .main-footer-minimal, .nav-toggle {
+    .main-nav, .nav-toggle {
         display: none;
     }
-    
+
     body {
         color: black;
         background: white;
     }
-    
+
     a {
         color: black;
         text-decoration: underline;
     }
-    
+
     .hero-simple {
         padding: 1rem 0;
     }
-    
+
     .btn {
         display: none;
     }

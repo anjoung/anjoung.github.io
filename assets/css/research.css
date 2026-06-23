@@ -1,63 +1,59 @@
 /* ========================================
-   Research Page Specific Styles
+   Research Page Specific Styles (redesign)
    ======================================== */
 
-/* Main content starts right after nav */
 .research-main {
-    background: var(--color-bg-light);
+    background: var(--color-bg);  /* ivory, seamless */
 }
 
-/* Research Papers - Compact for non-JMP */
+/* Research Papers - flat, no panel against ivory */
 .research-paper {
-    background: var(--color-bg);
+    background: transparent;
     border-radius: 8px;
     padding: var(--spacing-lg);
     margin-bottom: var(--spacing-xs);
-    transition: none;  /* No hover effects */
+    transition: none;
 }
 
 .research-paper-compact {
-    background: var(--color-bg);
+    background: transparent;
     border-radius: 8px;
-    padding: 0.75rem;  /* Much less padding - reduced from var(--spacing-xs) */
-    margin-bottom: 0.5rem;  /* Much less margin between entries */
-    transition: none;  /* No hover effects */
+    padding: 0.75rem;
+    margin-bottom: 0.5rem;
+    transition: none;
 }
 
-/* No hover effect */
 .research-paper:hover,
 .research-paper-compact:hover {
     box-shadow: none;
     border-color: inherit;
 }
 
-/* Featured Paper (Job Market Paper) - Removed blue label */
+/* Featured Paper (Job Market Paper) - charcoal border (was blue) */
 .research-paper.featured-simple {
-    border: 2px solid var(--color-primary);  /* Blue border */
+    border: 2px solid var(--color-text);
     position: relative;
-    background: var(--color-bg);
-    box-shadow: var(--shadow-md);
+    background: transparent;
+    box-shadow: none;
     padding: var(--spacing-lg);
     margin-bottom: var(--spacing-xs);
 }
 
-/* Removed the ::before pseudo-element that created the blue label */
-
 /* Paper Elements */
 .paper-title {
     color: var(--color-text);
-    font-size: 1.1rem;  /* Reduced from 1.25rem */
-    margin-bottom: 0rem;  /* Much less margin */
-    line-height: 1.2;  /* Tighter line height */
+    font-size: 1.1rem;
+    margin-bottom: 0rem;
+    line-height: 1.2;
     font-weight: 500;
 }
 
 .paper-meta {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.75rem;  /* Reduced gap */
-    margin-bottom: 0.25rem;  /* Much less margin */
-    font-size: 0.875rem;  /* Slightly smaller */
+    gap: 0.75rem;
+    margin-bottom: 0.25rem;
+    font-size: 0.875rem;
     color: var(--color-text-secondary);
     align-items: baseline;
 }
@@ -68,15 +64,16 @@
 }
 
 .paper-status {
-    background: var(--color-bg-light);
+    background: var(--color-inset);  /* subtle chip on ivory */
     padding: 2px 8px;
     border-radius: 4px;
     font-weight: 500;
+    color: var(--color-text);
 }
 
 .paper-journal {
     font-style: italic;
-    color: var(--color-primary);
+    color: var(--color-text);  /* was blue */
 }
 
 .paper-coauthors {
@@ -87,23 +84,23 @@
     font-style: italic;
     color: var(--color-text-secondary);
     font-size: 0.875rem;
-    margin: 0;  /* Very minimal margin */
+    margin: 0;
 }
 
 /* Abstract Toggle Button */
 .abstract-toggle {
     background: none;
     border: none;
-    color: var(--color-primary);
+    color: var(--color-text);   /* charcoal (was blue) */
     cursor: pointer;
     display: inline-flex;
     align-items: center;
     gap: var(--spacing-xs);
-    padding: 0;  /* Less padding */
+    padding: 0;
     font-weight: 500;
     font-size: 0.875rem;
     transition: var(--transition-fast);
-    margin-bottom: 0rem;  /* Less margin */
+    margin-bottom: 0rem;
     margin-top: 0rem;
 }
 
@@ -139,25 +136,25 @@
 
 .paper-abstract p {
     text-align: left;
-    line-height: 1.6;  /* Slightly tighter */
+    line-height: 1.6;
     color: var(--color-text);
 }
 
-/* Collapsible Abstract */
+/* Collapsible Abstract - gentle inset tone + charcoal rule */
 .paper-abstract-collapsible {
-    margin: 0;  /* Less margin */
-    padding: 0.75rem;  /* Less padding */
-    background: var(--color-bg-light);
+    margin: 0;
+    padding: 0.75rem;
+    background: var(--color-inset);
     border-radius: 4px;
-    border-left: 3px solid var(--color-primary);
+    border-left: 3px solid var(--color-text);  /* was blue */
 }
 
 .paper-abstract-collapsible p {
     text-align: left;
-    line-height: 1.6;  /* Tighter line height */
+    line-height: 1.6;
     color: var(--color-text);
     margin: 0;
-    font-size: 0.9rem;  /* Slightly smaller text */
+    font-size: 0.9rem;
 }
 
 /* Paper Links */
@@ -169,7 +166,7 @@
 }
 
 .paper-link {
-    color: var(--color-primary);
+    color: var(--color-text);  /* charcoal (was blue) */
     font-weight: 500;
     font-size: 0.875rem;
     padding-right: var(--spacing-xs);
@@ -184,55 +181,83 @@
     text-decoration: underline;
 }
 
-/* Work in Progress Items - More Compact */
+/* Work in Progress Items */
 .research-item {
-    padding: 0;  /* Minimal padding */
-    margin-bottom: 0rem;  /* Much reduced spacing between items */
-    background: var(--color-bg);
+    padding: 0;
+    margin-bottom: 0rem;
+    background: transparent;
     border-radius: 4px;
-   transition: none;  /* No hover effects */
-
+    transition: none;
 }
 
 .research-item .paper-title {
     font-size: 1.1rem;
-    margin-bottom: 0.25rem;  /* Very minimal margin */
+    margin-bottom: 0.25rem;
 }
 
-/* Section spacing adjustments for compactness */
+/* Section spacing */
 .section {
-    padding: 1.5rem 0;  /* Reduced from var(--spacing-xl) */
+    padding: 1.5rem 0;
     background: var(--color-bg);
 }
 
 .section-first {
-    padding-top: 2rem;  /* Reduced from var(--spacing-xxl) */
+    padding-top: 2rem;
 }
 
 .section-title {
-    margin-bottom: 1rem;  /* Reduced from var(--spacing-lg) */
+    margin-bottom: 1rem;
 }
 
-/* Responsive Design */
+/* ========================================
+   Projects page (Code-page style)
+   ======================================== */
+.project-item {
+    margin-bottom: var(--spacing-lg);
+    max-width: var(--content-width);
+}
+
+.project-title {
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-bottom: 0.35rem;
+    color: var(--color-text);
+}
+
+.project-title a {
+    color: var(--color-text);
+}
+
+.project-desc {
+    color: var(--color-text);
+    line-height: 1.7;
+    margin: 0;
+}
+
+.project-desc .label {
+    font-weight: 700;
+}
+
+/* Responsive */
 @media (max-width: 768px) {
     .section-title {
         font-size: 1.5rem;
     }
-    
+
     .paper-title {
         font-size: 1rem;
     }
-    
+
     .paper-links {
         flex-direction: column;
         align-items: flex-start;
     }
-    
+
     .paper-links .btn {
         width: 100%;
         text-align: center;
     }
-    
+
     .paper-meta {
         flex-direction: column;
         gap: 0.25rem;

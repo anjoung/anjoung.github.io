@@ -178,7 +178,7 @@
     const style = document.createElement('style');
     style.textContent = `
         .keyboard-nav *:focus {
-            outline: 2px solid var(--color-accent) !important;
+            outline: 2px solid var(--color-primary) !important;
             outline-offset: 2px !important;
         }
 
