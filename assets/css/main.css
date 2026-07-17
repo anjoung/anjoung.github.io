@@ -265,6 +265,12 @@ a:hover {
     color: var(--color-text-secondary);
     margin-bottom: var(--spacing-lg);
     font-size: 1rem;
+    line-height: 1.4;
+}
+
+/* stacked affiliation lines sit tight together */
+.hero-affiliation + .hero-affiliation {
+    margin-top: calc(var(--spacing-xs) - var(--spacing-lg)); /* nets a ~0.5rem gap */
 }
 
 .hero-bio {
